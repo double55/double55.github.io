@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Double55的blog</title>
+  <title>Pandas_note1 | Double55的blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Double55的blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="pandas相关内容1234567891011121314151617181920import pandas as pdfrom pandas import Series,DataFrameimport numpy as npsel &#x3D; pd.Series([1,2,3,4])print(&quot;1:\n&quot;, sel)# 自定义索引sel &#x3D; pd.Series([1,2,3,4],">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas_note1">
+<meta property="og:url" content="http://example.com/2020/11/27/andas-note1/index.html">
 <meta property="og:site_name" content="Double55的blog">
+<meta property="og:description" content="pandas相关内容1234567891011121314151617181920import pandas as pdfrom pandas import Series,DataFrameimport numpy as npsel &#x3D; pd.Series([1,2,3,4])print(&quot;1:\n&quot;, sel)# 自定义索引sel &#x3D; pd.Series([1,2,3,4],">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-27T14:46:25.000Z">
+<meta property="article:modified_time" content="2020-11-27T14:48:41.276Z">
 <meta property="article:author" content="Double55">
 <meta name="twitter:card" content="summary">
   
@@ -138,238 +142,931 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-andas-note1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Pandas_note1
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/27/andas-note1/" class="archive-article-date">
+
+        
+        <a href="/2020/11/27/andas-note1/" class="archive-article-date">
   	<time datetime="2020-11-27T14:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/27/andas-note1/">Pandas_note1</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(<span class="string">&quot;1:\n&quot;</span>, sel)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义索引</span></span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>])</span><br><span class="line">sel1 = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">print(<span class="string">&quot;2:\n&quot;</span>, sel,sel1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取内容</span></span><br><span class="line">print(<span class="string">&quot;3:\n&quot;</span>, sel.values)  <span class="comment">#  [1 2 3 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取索引</span></span><br><span class="line">print(<span class="string">&quot;4:\n&quot;</span>, sel.index)  <span class="comment">#  Index([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;], dtype=&#x27;object&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取索引和值对</span></span><br><span class="line">print(<span class="string">&quot;5:\n&quot;</span>, list(sel.iteritems()))  <span class="comment">#  [(&#x27;a&#x27;, 1), (&#x27;b&#x27;, 2), (&#x27;c&#x27;, 3), (&#x27;d&#x27;, 4)]</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<a id="more"></a>
 
+<pre><code>1:
+ 0    1
+1    2
+2    3
+3    4
+dtype: int64
+2:
+ a    1
+b    2
+c    3
+d    4
+dtype: int64 a    1
+b    2
+c    3
+d    4
+dtype: int64
+3:
+ [1 2 3 4]
+4:
+ Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;], dtype=&#39;object&#39;)
+5:
+ [(&#39;a&#39;, 1), (&#39;b&#39;, 2), (&#39;c&#39;, 3), (&#39;d&#39;, 4)]</code></pre>
+<h1 id="将字典转换为Series"><a href="#将字典转换为Series" class="headerlink" title="将字典转换为Series"></a>将字典转换为Series</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">dict = &#123;<span class="string">&quot;red&quot;</span>:<span class="number">100</span>, <span class="string">&quot;black&quot;</span>:<span class="number">600</span>, <span class="string">&quot;green&quot;</span>:<span class="number">700</span>&#125;</span><br><span class="line">se = pd.Series(dict)</span><br><span class="line">print(se)</span><br></pre></td></tr></table></figure>
+
+<pre><code>red      100
+black    600
+green    700
+dtype: int64</code></pre>
+<h1 id="Series对象同时支持位置下标和索引下标获取数据"><a href="#Series对象同时支持位置下标和索引下标获取数据" class="headerlink" title="Series对象同时支持位置下标和索引下标获取数据"></a>Series对象同时支持位置下标和索引下标获取数据</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">print(<span class="string">&quot;索引下标：&quot;</span>, sel[<span class="string">&#x27;c&#x27;</span>])</span><br><span class="line">print(<span class="string">&quot;位置下标：&quot;</span>, sel[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取不连续数据</span></span><br><span class="line">print(<span class="string">&quot;索引下标：&quot;</span>, sel[[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;d&#x27;</span>]]) <span class="comment"># a    1     d    4</span></span><br><span class="line">print(<span class="string">&quot;位置下标：&quot;</span>, sel[[<span class="number">0</span>, <span class="number">3</span>]])  <span class="comment"># a    1     d    4</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>索引下标： 3
+位置下标： 3
+索引下标： a    1
+d    4
+dtype: int64
+位置下标： a    1
+d    4
+dtype: int64</code></pre>
+<h1 id="使用切片获取数据"><a href="#使用切片获取数据" class="headerlink" title="使用切片获取数据"></a>使用切片获取数据</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">print(<span class="string">&quot;位置切片：&quot;</span>, sel[<span class="number">1</span>:<span class="number">3</span>]) <span class="comment"># 左包含右不包含</span></span><br><span class="line">print(<span class="string">&quot;索引切片：&quot;</span>, sel[<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;d&#x27;</span>]) <span class="comment"># 左右都包含</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>位置切片： b    2
+c    3
+dtype: int64
+索引切片： a    1
+b    2
+c    3
+d    4
+dtype: int64</code></pre>
+<h1 id="重新赋值索引的值"><a href="#重新赋值索引的值" class="headerlink" title="重新赋值索引的值"></a>重新赋值索引的值</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">sel.index = list(<span class="string">&#x27;dbca&#x27;</span>)</span><br><span class="line">print(sel)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ReIndex重新索引，会返回一个新的Series（调用reindex将会重新排序，缺失值则用NaN表示）</span></span><br><span class="line">print(sel.reindex([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>d    1
+b    2
+c    3
+a    4
+dtype: int64
+a    4.0
+b    2.0
+c    3.0
+d    1.0
+e    NaN
+dtype: float64</code></pre>
+<h1 id="drop-丢弃指定轴上的项"><a href="#drop-丢弃指定轴上的项" class="headerlink" title="drop 丢弃指定轴上的项"></a>drop 丢弃指定轴上的项</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">sel = pd.Series(range(<span class="number">10</span>, <span class="number">15</span>))</span><br><span class="line">print(sel)</span><br><span class="line">print(sel.drop([<span class="number">2</span>,<span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0    10
+1    11
+2    12
+3    13
+4    14
+dtype: int64
+0    10
+1    11
+4    14
+dtype: int64</code></pre>
+<h1 id="Series进行算术运算操作"><a href="#Series进行算术运算操作" class="headerlink" title="Series进行算术运算操作"></a>Series进行算术运算操作</h1><p>对于 series 的算术运算操作都是基于 index 进行的</p>
+<p>我们可以用加减乘除（+ - * /）这样的运算符对两个 Series 进行运算<br>Pandas 将会根据索引 index，对相应的数据进行计算，结果将会以浮点<br>数（float）形式存储，以避免丢失精度</p>
+<p>如果 Pandas 在两个 Series 对象中找不到相同的 index，对应的位置就返回一个空值 nan</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">sel1 = pd.Series(data=range(<span class="number">4</span>), index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">sel2 = pd.Series(data=range(<span class="number">4</span>), index=list(<span class="string">&#x27;abce&#x27;</span>))</span><br><span class="line">print(sel1 + sel2)</span><br><span class="line">print(sel1 - sel2)</span><br><span class="line">print(sel1 * sel2)</span><br><span class="line">print(sel1 / sel2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>a    0.0
+b    2.0
+c    4.0
+d    NaN
+e    NaN
+dtype: float64
+a    0.0
+b    0.0
+c    0.0
+d    NaN
+e    NaN
+dtype: float64
+a    0.0
+b    1.0
+c    4.0
+d    NaN
+e    NaN
+dtype: float64
+a    NaN
+b    1.0
+c    1.0
+d    NaN
+e    NaN
+dtype: float64</code></pre>
+<h1 id="支持numpy的数组运算"><a href="#支持numpy的数组运算" class="headerlink" title="支持numpy的数组运算"></a>支持numpy的数组运算</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">sel = pd.Series(data=range(<span class="number">4</span>), index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">print(sel[sel&gt;<span class="number">2</span>])</span><br><span class="line">print(sel * <span class="number">2</span>)</span><br><span class="line">print(np.square(sel))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>d    3
+dtype: int64
+a    0
+b    2
+c    4
+d    6
+dtype: int64
+a    0
+b    1
+c    4
+d    9
+dtype: int64</code></pre>
+<h1 id="DataFrame的创建"><a href="#DataFrame的创建" class="headerlink" title="DataFrame的创建"></a>DataFrame的创建</h1><p>DataFrame (数据表)是一种2维数据结构，数据以表格的形式存储，分成若干行和列。通过DataFrame,你能很方便地处理数据。常见的操作比如选取、替换行或列的数据，还能重组数据表、修改索引、多重筛选等。我们基本.上可以把DataFrame理解成-组采用同样索引的Series的集合。调用DataFrame(可以将多种格式的数据转换为DataFrame对象，它的的三个参数data、index和columns分别为数据、行索引和列索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.创建DataFrame :</span></span><br><span class="line"><span class="comment"># 使用二维数组</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df1 = pd.DataFrame(np.random.randint(<span class="number">0</span>,<span class="number">10</span>, (<span class="number">4</span>,<span class="number">4</span>)), index=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], columns=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>])</span><br><span class="line">print(df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用字典创建(行索引由index决定，列索引由字典的键决定)</span></span><br><span class="line">dict=&#123;</span><br><span class="line">    <span class="string">&#x27;Province&#x27;</span>: [ <span class="string">&#x27; Guangdong&#x27;</span>, <span class="string">&#x27;Beijing&#x27;</span>, <span class="string">&#x27;Qinghai&#x27;</span>, <span class="string">&#x27; Fujian&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;pop&#x27;</span>: [<span class="number">1.3</span>, <span class="number">2.5</span>,<span class="number">1.1</span>, <span class="number">0.7</span>],</span><br><span class="line">    <span class="string">&#x27;year&#x27;</span>: [<span class="number">2018</span>,<span class="number">2018</span>,<span class="number">2018</span>,<span class="number">2018</span>]</span><br><span class="line">&#125;</span><br><span class="line">df2=pd.DataFrame(dict, index=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(df2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   a  b  c  d
+1  1  8  9  4
+2  3  7  0  2
+3  1  4  6  3
+4  1  3  9  6
+     Province  pop  year
+1   Guangdong  1.3  2018
+2     Beijing  2.5  2018
+3     Qinghai  1.1  2018
+4      Fujian  0.7  2018</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 使用from _dict</span></span><br><span class="line">dict2=&#123;<span class="string">&quot;a&quot;</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="string">&quot;b&quot;</span>:[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]&#125;</span><br><span class="line">df6=pd.DataFrame.from_dict(dict2)</span><br><span class="line">print(df6)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引相同的情况下，相同索引的值会相对应，缺少的值会添加NaN</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;Name&#x27;</span> :pd.Series([<span class="string">&#x27;zs&#x27;</span>,<span class="string">&#x27;ls&#x27;</span>,<span class="string">&#x27;we&#x27;</span>],index=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]),</span><br><span class="line">    <span class="string">&#x27; Age &#x27;</span>:pd.Series([<span class="string">&#x27;10&#x27;</span>,<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;30&#x27;</span> ,<span class="string">&#x27;40&#x27;</span>], index=[ <span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;d&#x27;</span>]),</span><br><span class="line">    <span class="string">&#x27;country&#x27;</span>:pd.Series([<span class="string">&#x27;中国&#x27;</span>,<span class="string">&#x27;日本&#x27;</span>,<span class="string">&#x27;韩国&#x27;</span>],index=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;b&#x27;</span>])</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line">print(df )</span><br><span class="line"></span><br><span class="line"><span class="comment"># to__dict()方法将DataFrame对象转换为字典</span></span><br><span class="line">dict = df.to_dict( )</span><br><span class="line">print(dict)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   a  b
+0  1  4
+1  2  5
+2  3  6
+  Name  Age  country
+a   zs    10      中国
+b   ls    20      韩国
+c   we   NaN      日本
+d  NaN    40     NaN
+e  NaN    30     NaN
+&#123;&#39;Name&#39;: &#123;&#39;a&#39;: &#39;zs&#39;, &#39;b&#39;: &#39;ls&#39;, &#39;c&#39;: &#39;we&#39;, &#39;d&#39;: nan, &#39;e&#39;: nan&#125;, &#39; Age &#39;: &#123;&#39;a&#39;: &#39;10&#39;, &#39;b&#39;: &#39;20&#39;, &#39;c&#39;: nan, &#39;d&#39;: &#39;40&#39;, &#39;e&#39;: &#39;30&#39;&#125;, &#39;country&#39;: &#123;&#39;a&#39;: &#39;中国&#39;, &#39;b&#39;: &#39;韩国&#39;, &#39;c&#39;: &#39;日本&#39;, &#39;d&#39;: nan, &#39;e&#39;: nan&#125;&#125;</code></pre>
+<h1 id="DataFrame-对象常用属性"><a href="#DataFrame-对象常用属性" class="headerlink" title="DataFrame 对象常用属性"></a>DataFrame 对象常用属性</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># datafr ame常用属性</span></span><br><span class="line">df_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:[<span class="string">&#x27;James&#x27;</span>,<span class="string">&#x27;Curry&#x27;</span>,<span class="string">&#x27;Iversion&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:[<span class="string">&#x27;18&#x27;</span>,<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;19&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;national&#x27;</span> :[<span class="string">&#x27;us&#x27;</span>, <span class="string">&#x27;China&#x27;</span>,<span class="string">&#x27;us&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(data=df_dict, index=[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br><span class="line">print(df)</span><br><span class="line"><span class="comment"># 获取行数和列数</span></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df.shape )</span><br><span class="line"><span class="comment"># 获取行索引</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df.index.tolist())</span><br><span class="line"><span class="comment"># 获取列索引</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df.columns.tolist())</span><br><span class="line"><span class="comment"># 获取数据的类型</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>,df.dtypes)</span><br><span class="line"><span class="comment"># 获取数据的维度</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>       name age national
+0     James  18       us
+1     Curry  20    China
+2  Iversion  19       us
+1:
+ (3, 3)
+2:
+ [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;]
+3:
+ [&#39;name&#39;, &#39;age&#39;, &#39;national&#39;]
+4:
+ name        object
+age         object
+national    object
+dtype: object
+5:
+ 2</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># datafr ame常用属性</span></span><br><span class="line">df_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>: [<span class="string">&#x27;James&#x27;</span>, <span class="string">&#x27;Curry&#x27;</span>, <span class="string">&#x27;Iversion&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span> : [<span class="string">&#x27;18&#x27;</span>, <span class="string">&#x27;20&#x27;</span>, <span class="string">&#x27;19&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;national&#x27;</span> : [<span class="string">&#x27;us&#x27;</span>, <span class="string">&#x27;China&#x27;</span>, <span class="string">&#x27;us&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(data=df_dict, index=[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># values属性也会以二维ndar ray的形式返回DataFrame的数据</span></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df.values)</span><br><span class="line"><span class="comment"># 展示df的概览</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df.info())</span><br><span class="line"><span class="comment"># 显示头几行，默认显示5行</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df.head(<span class="number">2</span>))</span><br><span class="line"><span class="comment"># 显示后几行</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df.tail(<span class="number">1</span>))</span><br><span class="line"><span class="comment"># 获取DataFrame的列</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df[<span class="string">&#x27;name&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>       name age national
+0     James  18       us
+1     Curry  20    China
+2  Iversion  19       us
+1:
+ [[&#39;James&#39; &#39;18&#39; &#39;us&#39;]
+ [&#39;Curry&#39; &#39;20&#39; &#39;China&#39;]
+ [&#39;Iversion&#39; &#39;19&#39; &#39;us&#39;]]
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 3 entries, 0 to 2
+Data columns (total 3 columns):
+ #   Column    Non-Null Count  Dtype 
+---  ------    --------------  ----- 
+ 0   name      3 non-null      object
+ 1   age       3 non-null      object
+ 2   national  3 non-null      object
+dtypes: object(3)
+memory usage: 96.0+ bytes
+2:
+ None
+3:
+     name age national
+0  James  18       us
+1  Curry  20    China
+4:
+        name age national
+2  Iversion  19       us
+5:
+ 0       James
+1       Curry
+2    Iversion
+Name: name, dtype: object</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># datafr ame常用属性</span></span><br><span class="line">df_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span> : [<span class="string">&#x27;James&#x27;</span>, <span class="string">&#x27;Curry&#x27;</span>, <span class="string">&#x27;Iversion&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span> : [<span class="string">&#x27;18&#x27;</span>, <span class="string">&#x27;20&#x27;</span>, <span class="string">&#x27;19&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;national&#x27;</span> : [<span class="string">&#x27;us&#x27;</span>, <span class="string">&#x27;China&#x27;</span>, <span class="string">&#x27;us&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(data=df_dict, index=[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 因为我们只获取一-列，所以返回的就是一个Series</span></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>,type(df[<span class="string">&#x27;name&#x27;</span>]))</span><br><span class="line"><span class="comment"># 如果获取多个列，那返回的就是一个DataFrame类型:</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>,df[[<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>]])</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>,type(df[[ <span class="string">&#x27;name&#x27;</span> ,<span class="string">&#x27;age&#x27;</span>]]))</span><br><span class="line"><span class="comment"># 获取一行</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>,df[<span class="number">0</span>:<span class="number">1</span>])</span><br><span class="line"><span class="comment"># 获取多行</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>,df[<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line"><span class="comment"># 取多行里面的某- -列(不能进行多行多列的选择)</span></span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>,df[<span class="number">1</span>:<span class="number">3</span>][[<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;age&#x27;</span>]])</span><br><span class="line"><span class="comment"># 注意:df[]只能进行行选择，或列选择，不能同时多行多列选择。</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>       name age national
+0     James  18       us
+1     Curry  20    China
+2  Iversion  19       us
+1:
+ &lt;class &#39;pandas.core.series.Series&#39;&gt;
+2:
+        name age
+0     James  18
+1     Curry  20
+2  Iversion  19
+3:
+ &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+4:
+     name age national
+0  James  18       us
+5:
+        name age national
+1     Curry  20    China
+2  Iversion  19       us
+6:
+        name age
+1     Curry  20
+2  Iversion  19</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># dataframe常用属性</span></span><br><span class="line">df_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:[<span class="string">&#x27;James&#x27;</span>,<span class="string">&#x27;Curry&#x27;</span>,<span class="string">&#x27;Iversion&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:[<span class="string">&#x27;18&#x27;</span>,<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;19&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;national&#x27;</span> :[<span class="string">&#x27;us&#x27;</span>, <span class="string">&#x27;China&#x27;</span>,<span class="string">&#x27;us&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(data=df_dict, index=[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">df.loc通过标签索引行数据</span></span><br><span class="line"><span class="string">df.iloc通过位置获取行数据</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 获取某一行某一列的数据</span></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>,df.loc[<span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"><span class="comment"># 一行所有列</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>,df .loc[<span class="string">&#x27;0&#x27;</span>,: ])</span><br><span class="line"><span class="comment"># 某一行多列的数据</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>,df .loc[<span class="string">&#x27;0&#x27;</span>,[ <span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>]])</span><br><span class="line"><span class="comment"># 选择间隔的多行多列</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>,df.loc[[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;2&#x27;</span>],[<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;national&#x27;</span>]])</span><br><span class="line"><span class="comment"># 选择连续的多行和间隔的多列</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>,df.loc[<span class="string">&#x27;0&#x27;</span>:<span class="string">&#x27;2&#x27;</span>,[<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;national&#x27;</span>]])</span><br></pre></td></tr></table></figure>
+
+<pre><code>       name age national
+0     James  18       us
+1     Curry  20    China
+2  Iversion  19       us
+1:
+ James
+2:
+ name        James
+age            18
+national       us
+Name: 0, dtype: object
+3:
+ name    James
+age        18
+Name: 0, dtype: object
+4:
+        name national
+0     James       us
+2  Iversion       us
+5:
+        name national
+0     James       us
+1     Curry    China
+2  Iversion       us</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># dataframe常用属性</span></span><br><span class="line">df_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:[<span class="string">&#x27;James&#x27;</span>,<span class="string">&#x27;Curry&#x27;</span>,<span class="string">&#x27;Iversion&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:[<span class="string">&#x27;18&#x27;</span>,<span class="string">&#x27;20&#x27;</span>,<span class="string">&#x27;19&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;national&#x27;</span> :[<span class="string">&#x27;us&#x27;</span>, <span class="string">&#x27;China&#x27;</span>,<span class="string">&#x27;us&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(data=df_dict, index=[<span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>])</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取一行</span></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>,df.iloc[<span class="number">1</span>])</span><br><span class="line"><span class="comment"># 取连续多行</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>,df.iloc[<span class="number">0</span>:<span class="number">2</span>])</span><br><span class="line"><span class="comment"># 取间断的多行</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>,df.iloc[[<span class="number">0</span>,<span class="number">2</span>],: ])</span><br><span class="line"><span class="comment"># 取某一列</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>,df.iloc[: ,<span class="number">1</span>])</span><br><span class="line"><span class="comment"># 某一个值</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>,df.iloc[<span class="number">1</span>,<span class="number">0</span>])</span><br><span class="line"><span class="comment"># 修改值</span></span><br><span class="line">df.iloc[<span class="number">0</span>,<span class="number">0</span>]=<span class="string">&#x27;panda &#x27;</span></span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>,df)</span><br><span class="line"><span class="comment"># datafr ame中的排序方法</span></span><br><span class="line">df = df.sort_values(by= <span class="string">&#x27;age&#x27;</span>,ascending=<span class="literal">False</span> )</span><br><span class="line"><span class="comment"># ascending = False :降序排列，默认是升序</span></span><br><span class="line">print(<span class="string">&#x27;7:\n&#x27;</span>,df)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>       name age national
+0     James  18       us
+1     Curry  20    China
+2  Iversion  19       us
+1:
+ name        Curry
+age            20
+national    China
+Name: 1, dtype: object
+2:
+     name age national
+0  James  18       us
+1  Curry  20    China
+3:
+        name age national
+0     James  18       us
+2  Iversion  19       us
+4:
+ 0    18
+1    20
+2    19
+Name: age, dtype: object
+5:
+ Curry
+6:
+        name age national
+0    panda   18       us
+1     Curry  20    China
+2  Iversion  19       us
+7:
+        name age national
+1     Curry  20    China
+2  Iversion  19       us
+0    panda   18       us</code></pre>
+<h1 id="DataFrame修改index和columns"><a href="#DataFrame修改index和columns" class="headerlink" title="DataFrame修改index和columns"></a>DataFrame修改index和columns</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df1 = pd .DataFrame(np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>),index = [<span class="string">&#x27;bj&#x27;</span>,<span class="string">&#x27;sh&#x27;</span>,<span class="string">&#x27;gz&#x27;</span>],columns=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>])</span><br><span class="line">print(df1)</span><br><span class="line"><span class="comment"># 修改df1的index</span></span><br><span class="line">print(df1.index) <span class="comment"># 可以打印出print的值，同时也可以为其赋值</span></span><br><span class="line">df1.index = [<span class="string">&#x27;beijing&#x27;</span>, <span class="string">&#x27;shanghai&#x27;</span>, <span class="string">&#x27;guangzhou&#x27;</span> ]</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>,df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义map函数 (x是原有的行列值)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_map</span>(<span class="params">x</span>) :</span></span><br><span class="line">    <span class="keyword">return</span> x+<span class="string">&#x27;_ABC&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># inplace: 布尔值，默认为False。指定是否返回新的DataFrame。如果为True,则在原df.上修改，返回值为None。</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>,df1.rename(index=test_map, columns=test_map, inplace=<span class="literal">True</span>))</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>,df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时，rename还可以传入字典，为某个index单独修改名称</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>,df1.rename(index=&#123;<span class="string">&#x27;beijing_ABC&#x27;</span>:<span class="string">&#x27;bj&#x27;</span>&#125;,columns=&#123;<span class="string">&#x27;a_ABC&#x27;</span>:<span class="string">&#x27;aa&#x27;</span>&#125;))</span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>,df1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>    a  b  c
+bj  0  1  2
+sh  3  4  5
+gz  6  7  8
+Index([&#39;bj&#39;, &#39;sh&#39;, &#39;gz&#39;], dtype=&#39;object&#39;)
+1:
+            a  b  c
+beijing    0  1  2
+shanghai   3  4  5
+guangzhou  6  7  8
+2:
+ None
+3:
+                a_ABC  b_ABC  c_ABC
+beijing_ABC        0      1      2
+shanghai_ABC       3      4      5
+guangzhou_ABC      6      7      8
+4:
+                aa  b_ABC  c_ABC
+bj              0      1      2
+shanghai_ABC    3      4      5
+guangzhou_ABC   6      7      8
+5:
+                a_ABC  b_ABC  c_ABC
+beijing_ABC        0      1      2
+shanghai_ABC       3      4      5
+guangzhou_ABC      6      7      8</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 列转化为索引</span></span><br><span class="line">df1=pd.DataFrame(&#123;<span class="string">&#x27;X&#x27;</span>:range(<span class="number">5</span>),<span class="string">&#x27;Y&#x27;</span> :range(<span class="number">5</span>),<span class="string">&#x27;S&#x27;</span> :list( <span class="string">&quot;abcde&quot;</span>),<span class="string">&#x27;Z&#x27;</span>:[<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>]&#125;)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>,df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定一列为索引(drop=False 指定同时保留作为索引的列)</span></span><br><span class="line"><span class="comment"># 列元素转为行索引</span></span><br><span class="line">result = df1.set_index(<span class="string">&#x27;S&#x27;</span>,drop=<span class="literal">False</span>)</span><br><span class="line">result.index.name=<span class="literal">None</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>,result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 行转为列索引</span></span><br><span class="line">result = df1.set_axis(df1.iloc[<span class="number">0</span>], axis=<span class="number">1</span>, inplace=<span class="literal">False</span>)</span><br><span class="line">result.columns.name =<span class="literal">None</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>,result)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+    X  Y  S  Z
+0  0  0  a  1
+1  1  1  b  1
+2  2  2  c  2
+3  3  3  d  2
+4  4  4  e  2
+2:
+    X  Y  S  Z
+a  0  0  a  1
+b  1  1  b  1
+c  2  2  c  2
+d  3  3  d  2
+e  4  4  e  2
+3:
+    0  0  a  1
+0  0  0  a  1
+1  1  1  b  1
+2  2  2  c  2
+3  3  3  d  2
+4  4  4  e  2</code></pre>
+<h1 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment"># 增加数据</span></span><br><span class="line">df1 = pd.DataFrame([[<span class="string">&#x27;Snow&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">22</span>], [<span class="string">&#x27;Tyrion&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">32</span>], [<span class="string">&#x27;Sansa&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">18</span>], [ <span class="string">&#x27;Arya&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">14</span>]], columns = [ <span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>, <span class="string">&#x27;age&#x27;</span>])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>,df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在数据框最后加上score- 列</span></span><br><span class="line">df1[<span class="string">&#x27;score&#x27;</span>] = [<span class="number">80</span>,<span class="number">98</span>,<span class="number">67</span>,<span class="number">90</span>] <span class="comment"># 增加列的元素个数要跟原数据列的个数- -样</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在具体某个位置插入一列可以用insert的方法</span></span><br><span class="line"><span class="comment"># 语法格式:列表. insert (index, obj)</span></span><br><span class="line"><span class="comment"># index ---&gt;对象obj 需要插入的索引位置。</span></span><br><span class="line"><span class="comment"># obj ---&gt;要插入列表中的对象(列名)</span></span><br><span class="line"></span><br><span class="line">col_name = df1.columns.tolist( )</span><br><span class="line"><span class="comment">#将数据框的列名全部提取出来存放在列表里</span></span><br><span class="line">col_name.insert(<span class="number">2</span>,<span class="string">&#x27;city&#x27;</span>)</span><br><span class="line"><span class="comment"># 在列索引为2的位置插入- -列,列名为:city,刚插入时不会有值，整列都是NaN</span></span><br><span class="line">df1 = df1.reindex(columns = col_name )</span><br><span class="line"><span class="comment"># DataFrame .reindex()对原行/列索引重新构建索引值</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1)</span><br><span class="line">df1[<span class="string">&#x27;city&#x27;</span>]=[ <span class="string">&#x27;北京&#x27;</span>,<span class="string">&#x27;山西&#x27;</span>,<span class="string">&#x27;湖北&#x27;</span>,<span class="string">&#x27;澳门&#x27;</span>] <span class="comment"># 给city列赋值</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df1)</span><br><span class="line"><span class="comment"># df中的insert,插入- -列</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">df.insert(iloc,column,value)</span></span><br><span class="line"><span class="string">iloc :要插入的位置</span></span><br><span class="line"><span class="string">colunm:列名</span></span><br><span class="line"><span class="string">value:值</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">df1.insert(<span class="number">2</span>,<span class="string">&#x27;fenshu&#x27;</span>,[<span class="number">80</span>,<span class="number">98</span>,<span class="number">67</span>,<span class="number">90</span>])</span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#插入一行  用 .loc() 方法  而不是 .iloc()</span></span><br><span class="line">row=[<span class="string">&#x27;lll&#x27;</span>, <span class="string">&#x27;F&#x27;</span>,<span class="number">66</span>, <span class="string">&#x27;河北&#x27;</span>, <span class="number">22</span>, <span class="number">5</span>]</span><br><span class="line">df1.loc[<span class="number">4</span>]=row</span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, df1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+      name gender  age
+0    Snow      M   22
+1  Tyrion      M   32
+2   Sansa      F   18
+3    Arya      F   14
+2:
+      name gender  age  score
+0    Snow      M   22     80
+1  Tyrion      M   32     98
+2   Sansa      F   18     67
+3    Arya      F   14     90
+3:
+      name gender  city  age  score
+0    Snow      M   NaN   22     80
+1  Tyrion      M   NaN   32     98
+2   Sansa      F   NaN   18     67
+3    Arya      F   NaN   14     90
+4:
+      name gender city  age  score
+0    Snow      M   北京   22     80
+1  Tyrion      M   山西   32     98
+2   Sansa      F   湖北   18     67
+3    Arya      F   澳门   14     90
+5:
+      name gender  fenshu city  age  score
+0    Snow      M      80   北京   22     80
+1  Tyrion      M      98   山西   32     98
+2   Sansa      F      67   湖北   18     67
+3    Arya      F      90   澳门   14     90
+6:
+      name gender  fenshu city  age  score
+0    Snow      M      80   北京   22     80
+1  Tyrion      M      98   山西   32     98
+2   Sansa      F      67   湖北   18     67
+3    Arya      F      90   澳门   14     90
+4     lll      F      66   河北   22      5</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment"># 增加数据</span></span><br><span class="line">df1 = pd.DataFrame([[<span class="string">&#x27;Snow&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">22</span>], [<span class="string">&#x27;Tyrion&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">32</span>], [<span class="string">&#x27;Sansa&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">18</span>], [ <span class="string">&#x27;Arya&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="number">14</span>]], columns = [ <span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>, <span class="string">&#x27;age&#x27;</span>])</span><br><span class="line"><span class="comment"># 先创建一个DataFrame, 用来增加进数据框的最后一行</span></span><br><span class="line">new = pd.DataFrame(&#123; <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;lisa&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;gender&#x27;</span>:<span class="string">&#x27;F&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;age&#x27;</span>:<span class="number">19</span> </span><br><span class="line">&#125;, index=[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, new)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># print--&quot;------在原数据框df1最后行新增-行，用appen------------&quot;)</span></span><br><span class="line">df1 = df1.append(new, ignore_index = <span class="literal">True</span>) <span class="comment"># ignore_ index=F alse ,表示不按原来的索引，从0开始自动递增</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+    name gender  age
+0  lisa      F   19
+2:
+      name gender  age
+0    Snow      M   22
+1  Tyrion      M   32
+2   Sansa      F   18
+3    Arya      F   14
+4    lisa      F   19</code></pre>
+<h1 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h1><p>objs:合并对象</p>
+<p>axis:合并方式，默认0表示按列合并，1表示按行合并</p>
+<p>ignore_ index: 是否忽略索引</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1 = pd.DataFrame(np.arange(<span class="number">6</span>).reshape(<span class="number">3</span>,<span class="number">2</span>),columns=[<span class="string">&#x27;four&#x27;</span>,<span class="string">&#x27;five&#x27;</span>])</span><br><span class="line">df2 = pd.DataFrame(np.arange(<span class="number">6</span>).reshape(<span class="number">2</span>,<span class="number">3</span>),columns=[<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>,<span class="string">&#x27;three&#x27;</span>])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line">print(<span class="string">&#x27;1.1:\n&#x27;</span>, df2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按行合并</span></span><br><span class="line">result = pd.concat([df1,df2], axis=<span class="number">1</span>)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按列合并</span></span><br><span class="line">result = pd.concat([df1,df2], axis=<span class="number">0</span>, ignore_index = <span class="literal">True</span>)</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, result)</span><br><span class="line"><span class="comment"># Dataframe的删除</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">lables:要删除数据的标签</span></span><br><span class="line"><span class="string">axis: 0表示删除行，1表示删除列，默认0</span></span><br><span class="line"><span class="string">inpl ace:是否在当前af中执行此操作</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">df2 = pd.DataFrame(np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>),columns=[<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>,<span class="string">&#x27;three&#x27;</span>])</span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df2)</span><br><span class="line">df3=df2.drop([<span class="string">&#x27;one&#x27;</span>],axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># df3=df2.drop( [0, 1],axis=0，inplace=False)</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df2)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, df3)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+    four  five
+0     0     1
+1     2     3
+2     4     5
+1.1:
+    one  two  three
+0    0    1      2
+1    3    4      5
+2:
+    four  five  one  two  three
+0     0     1  0.0  1.0    2.0
+1     2     3  3.0  4.0    5.0
+2     4     5  NaN  NaN    NaN
+3:
+    four  five  one  two  three
+0   0.0   1.0  NaN  NaN    NaN
+1   2.0   3.0  NaN  NaN    NaN
+2   4.0   5.0  NaN  NaN    NaN
+3   NaN   NaN  0.0  1.0    2.0
+4   NaN   NaN  3.0  4.0    5.0
+4:
+    one  two  three
+0    0    1      2
+1    3    4      5
+2    6    7      8
+5:
+    two  three
+0    1      2
+1    4      5
+2    7      8
+6:
+ None</code></pre>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="通过-dropna-滤除缺失数据"><a href="#通过-dropna-滤除缺失数据" class="headerlink" title="通过**dropna() **滤除缺失数据:"></a>通过**dropna() **滤除缺失数据:</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NaN</span><br><span class="line">se = pd.Series([<span class="number">4</span>, NaN, <span class="number">8</span>, NaN, <span class="number">5</span>])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, se)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, se.dropna())</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, se.notnull())</span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, se.isnull())</span><br><span class="line"><span class="comment">#通过布尔序列也能滤除:</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, se[se.notnull()])</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ 0    4.0
+1    NaN
+2    8.0
+3    NaN
+4    5.0
+dtype: float64
+2:
+ 0    4.0
+2    8.0
+4    5.0
+dtype: float64
+3:
+ 0     True
+1    False
+2     True
+3    False
+4     True
+dtype: bool
+4:
+ 0    False
+1     True
+2    False
+3     True
+4    False
+dtype: bool
+5:
+ 0    4.0
+2    8.0
+4    5.0
+dtype: float64</code></pre>
+<h2 id="处理DataFrame对象"><a href="#处理DataFrame对象" class="headerlink" title="处理DataFrame对象"></a>处理DataFrame对象</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NaN</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1 = pd.DataFrame([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[NaN,NaN,<span class="number">2</span>],[NaN ,NaN,NaN],[<span class="number">8</span>,<span class="number">8</span>,NaN]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认滤除所有包含NaN: </span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1.dropna())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传入how=&#x27;all &#x27;滤除全为NaN的行:</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1.dropna(how=<span class="string">&#x27;all&#x27;</span>)) <span class="comment">#默认情况 下是how=&#x27; any&#x27;，只要有nan就删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 传入axis=1滤除列:</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df1.dropna(axis=<span class="number">1</span> ,how=<span class="string">&quot;all&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传入thresh=n保留至少有n个非NaN数据的行</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df1.dropna(thresh=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+2  NaN  NaN  NaN
+3  8.0  8.0  NaN
+2:
+      0    1    2
+0  1.0  2.0  3.0
+3:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+3  8.0  8.0  NaN
+4:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+2  NaN  NaN  NaN
+3  8.0  8.0  NaN
+5:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+3  8.0  8.0  NaN</code></pre>
+<h2 id="填充缺失数据"><a href="#填充缺失数据" class="headerlink" title="填充缺失数据"></a>填充缺失数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NaN</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[NaN,NaN,<span class="number">2</span>],[NaN ,NaN,NaN],[<span class="number">8</span>,<span class="number">8</span>,NaN]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用常数填充fillna</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1 .fillna(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传入inpl ace=True直接修改原对象:</span></span><br><span class="line">df1.fillna(<span class="number">0</span>,inplace=<span class="literal">True</span>)</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过字典填充不同的常数</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df1.fillna(&#123;<span class="number">0</span>:<span class="number">10</span>,<span class="number">1</span>:<span class="number">20</span>,<span class="number">2</span>:<span class="number">30</span>&#125;))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+2  NaN  NaN  NaN
+3  8.0  8.0  NaN
+2:
+      0    1    2
+0  1.0  2.0  3.0
+1  0.0  0.0  2.0
+2  0.0  0.0  0.0
+3  8.0  8.0  0.0
+3:
+      0    1    2
+0  1.0  2.0  3.0
+1  0.0  0.0  2.0
+2  0.0  0.0  0.0
+3  8.0  8.0  0.0
+4:
+      0    1    2
+0  1.0  2.0  3.0
+1  0.0  0.0  2.0
+2  0.0  0.0  0.0
+3  8.0  8.0  0.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NaN</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[NaN,NaN,<span class="number">2</span>],[NaN ,NaN,NaN],[<span class="number">8</span>,<span class="number">8</span>,NaN]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#填充平均值 列元素平均值</span></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1.fillna(df1.mean()))</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果只填充一列</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1.iloc[ : , <span class="number">1</span>].fillna(<span class="number">5</span>, inplace = <span class="literal">True</span>))</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#传入method=&quot;“ 改变插值方式:</span></span><br><span class="line">df2=pd. DataFrame (np. random. randint(<span class="number">0</span>,<span class="number">10</span>,(<span class="number">5</span>,<span class="number">5</span>)))</span><br><span class="line">df2.iloc[<span class="number">1</span>:<span class="number">4</span>,<span class="number">3</span>]=NaN</span><br><span class="line">df2.iloc[<span class="number">2</span>:<span class="number">4</span>,<span class="number">4</span>]=NaN</span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+2  NaN  NaN  NaN
+3  8.0  8.0  NaN
+1:
+      0    1    2
+0  1.0  2.0  3.0
+1  4.5  5.0  2.0
+2  4.5  5.0  2.5
+3  8.0  8.0  2.5
+2:
+ None
+3:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  5.0  2.0
+2  NaN  5.0  NaN
+3  8.0  8.0  NaN
+4:
+    0  1  2    3    4
+0  4  6  7  5.0  4.0
+1  9  2  1  NaN  0.0
+2  1  0  1  NaN  NaN
+3  8  1  8  NaN  NaN
+4  5  4  3  5.0  9.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NaN</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[NaN,NaN,<span class="number">2</span>],[NaN ,NaN,NaN],[<span class="number">8</span>,<span class="number">8</span>,NaN]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#用前面的值来填充ffill</span></span><br><span class="line"><span class="comment"># 用后面的值来填充bfill</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1.fillna(method=<span class="string">&#x27;ffill&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#传入limit=&quot; &quot;限制填充行数:</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1.fillna(method= <span class="string">&#x27;bfill&#x27;</span>, limit=<span class="number">1</span>) )</span><br><span class="line"></span><br><span class="line"><span class="comment">#传入axis=&quot; &quot;修改填充方向:</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df1.fillna(method=<span class="string">&quot;ffill&quot;</span>, limit=<span class="number">1</span>, axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+2  NaN  NaN  NaN
+3  8.0  8.0  NaN
+2:
+      0    1    2
+0  1.0  2.0  3.0
+1  1.0  2.0  2.0
+2  1.0  2.0  2.0
+3  8.0  8.0  2.0
+3:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+2  8.0  8.0  NaN
+3  8.0  8.0  NaN
+4:
+      0    1    2
+0  1.0  2.0  3.0
+1  NaN  NaN  2.0
+2  NaN  NaN  NaN
+3  8.0  8.0  8.0</code></pre>
+<h2 id="移除重复数据"><a href="#移除重复数据" class="headerlink" title="移除重复数据"></a>移除重复数据</h2><p>DataFrame中经常会出现重复行，利用dup licated ()函数返回每一行判断是否重复的结果(重复则为True )</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NaN</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>:[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>],<span class="string">&#x27;B&#x27;</span>:list(<span class="string">&quot;aabbbca&quot;</span>)&#125;)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断每一行是否重复(结果是bool值，TRUE代表重复的)</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1.duplicated())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除全部的重复行</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1.drop_duplicates())</span><br><span class="line"></span><br><span class="line"><span class="comment">## 指定列去除重复行</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df1 .drop_duplicates([<span class="string">&#x27;A&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保留重复行中的最后一行</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df1.drop_duplicates([<span class="string">&#x27;A&#x27;</span> ],keep= <span class="string">&#x27;last&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除重复的同时改变DataFrame对象</span></span><br><span class="line">df1.drop_duplicates([<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>], inplace=<span class="literal">True</span>)</span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, df1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+    A  B
+0  1  a
+1  1  a
+2  1  b
+3  2  b
+4  2  b
+5  3  c
+6  1  a
+2:
+ 0    False
+1     True
+2    False
+3    False
+4     True
+5    False
+6     True
+dtype: bool
+3:
+    A  B
+0  1  a
+2  1  b
+3  2  b
+5  3  c
+4:
+    A  B
+0  1  a
+3  2  b
+5  3  c
+5:
+    A  B
+4  2  b
+5  3  c
+6  1  a
+6:
+    A  B
+0  1  a
+2  1  b
+3  2  b
+5  3  c</code></pre>
+<h1 id="数据合并"><a href="#数据合并" class="headerlink" title="数据合并"></a>数据合并</h1><h2 id="使用join合并，着重关注的的是行的合并"><a href="#使用join合并，着重关注的的是行的合并" class="headerlink" title="使用join合并，着重关注的的是行的合并"></a>使用join合并，着重关注的的是行的合并</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df3=pd.DataFrame(&#123; <span class="string">&#x27;Red&#x27;</span> :[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>], <span class="string">&#x27;Green&#x27;</span> :[<span class="number">5</span>,<span class="number">0</span>,<span class="number">3</span>]&#125;, index=list( <span class="string">&#x27;abc&#x27;</span>))</span><br><span class="line">df4=pd.DataFrame(&#123; <span class="string">&#x27;Blue&#x27;</span>:[<span class="number">1</span>,<span class="number">9</span>,<span class="number">8</span>],<span class="string">&#x27;Yellow&#x27;</span>:[<span class="number">6</span>,<span class="number">6</span>,<span class="number">7</span>]&#125;, index=list(<span class="string">&#x27;cde&#x27;</span> ))</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df3)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df4)</span><br><span class="line"></span><br><span class="line"><span class="comment">#简单合并(默认是left左连接,以左侧df3为基础)</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df3.join(df4, how= <span class="string">&#x27;left&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#右链接</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df3.join(df4, how= <span class="string">&#x27;right&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#外链接</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df3.join(df4, how= <span class="string">&#x27;outer&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并多个DataFrame对象</span></span><br><span class="line">df5=pd.DataFrame(&#123;<span class="string">&#x27;Brown&#x27;</span>:[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],<span class="string">&#x27;white&#x27;</span>:[<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>]&#125;, index=list(<span class="string">&#x27;aed&#x27;</span>))</span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, df3.join([df4,df5]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+    Red  Green
+a    1      5
+b    3      0
+c    5      3
+2:
+    Blue  Yellow
+c     1       6
+d     9       6
+e     8       7
+3:
+    Red  Green  Blue  Yellow
+a    1      5   NaN     NaN
+b    3      0   NaN     NaN
+c    5      3   1.0     6.0
+4:
+    Red  Green  Blue  Yellow
+c  5.0    3.0     1       6
+d  NaN    NaN     9       6
+e  NaN    NaN     8       7
+5:
+    Red  Green  Blue  Yellow
+a  1.0    5.0   NaN     NaN
+b  3.0    0.0   NaN     NaN
+c  5.0    3.0   1.0     6.0
+d  NaN    NaN   9.0     6.0
+e  NaN    NaN   8.0     7.0
+6:
+    Red  Green  Blue  Yellow  Brown  white
+a  1.0    5.0   NaN     NaN    3.0    1.0
+b  3.0    0.0   NaN     NaN    NaN    NaN
+c  5.0    3.0   1.0     6.0    NaN    NaN</code></pre>
+<h2 id="使用merge，着重关注的是列的合并"><a href="#使用merge，着重关注的是列的合并" class="headerlink" title="使用merge，着重关注的是列的合并"></a>使用merge，着重关注的是列的合并</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1 = pd.DataFrame(&#123;<span class="string">&#x27;名字&#x27;</span>:list(<span class="string">&#x27;ABCDE&#x27;</span>), <span class="string">&#x27;性别&#x27;</span>:[<span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;女&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;女&#x27;</span>], <span class="string">&#x27;职称&#x27;</span>:[<span class="string">&#x27;副教授&#x27;</span>, <span class="string">&#x27;讲师&#x27;</span>, <span class="string">&#x27;助教&#x27;</span>, <span class="string">&#x27;教授&#x27;</span>, <span class="string">&#x27;助教&#x27;</span>]&#125;, index=range(<span class="number">1001</span>, <span class="number">1006</span>))</span><br><span class="line">df1.columns.name = <span class="string">&#x27;学院老师&#x27;</span></span><br><span class="line">df1.index.name = <span class="string">&#x27;编号&#x27;</span></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line">df2=pd.DataFrame(&#123;<span class="string">&#x27;名字&#x27;</span>:list(<span class="string">&#x27;ABDAX&#x27;</span>), <span class="string">&#x27;课程&#x27;</span>:[<span class="string">&#x27;C++&#x27;</span>, <span class="string">&#x27;计算机导论&#x27;</span>, <span class="string">&#x27;汇编&#x27;</span>, <span class="string">&#x27;数据结构&#x27;</span>, <span class="string">&#x27;马克思原理&#x27;</span>], <span class="string">&#x27;职称&#x27;</span>:[<span class="string">&#x27;副教授&#x27;</span>, <span class="string">&#x27;讲师&#x27;</span>, <span class="string">&#x27;教授&#x27;</span>,<span class="string">&#x27;副教授&#x27;</span>,<span class="string">&#x27;讲师&#x27;</span>]&#125;,index=[<span class="number">1001</span>, <span class="number">1002</span>, <span class="number">1004</span>, <span class="number">1001</span>, <span class="number">3001</span>])</span><br><span class="line">df2.columns.name= <span class="string">&#x27;课程&#x27;</span></span><br><span class="line">df2.index.name= <span class="string">&#x27;编号&#x27;</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#默认下是根据左右对象中出现同名的列作为连接的键，且连接方式是how=&#x27; inner&#x27;</span></span><br><span class="line">print(<span class="string">&#x27;2.1:\n&#x27;</span>, pd. merge(df1, df2) )<span class="comment">#返回匹配的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#指定列名合并</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, pd.merge (df1,df2,on= <span class="string">&#x27;名字&#x27;</span> ,suffixes=[<span class="string">&#x27;_ 1&#x27;</span>,<span class="string">&#x27;_2&#x27;</span>]))  <span class="comment">#返回匹配的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#连接方式，根据左侧为准</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, pd . merge(df1,df2,how= <span class="string">&#x27;left&#x27;</span> ))</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据右侧为准</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, pd . merge (df1,df2, how= <span class="string">&#x27;right&#x27;</span> ))</span><br><span class="line"></span><br><span class="line"><span class="comment">#所有</span></span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, pd.merge( df1, df2 , how=<span class="string">&#x27;outer&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据多个键进行连接</span></span><br><span class="line">print(<span class="string">&#x27;7:\n&#x27;</span>, pd.merge(df1,df2,on=[ <span class="string">&#x27;职称&#x27;</span>,<span class="string">&#x27;名字&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ 学院老师 名字 性别   职称
+编号             
+1001  A  男  副教授
+1002  B  女   讲师
+1003  C  男   助教
+1004  D  男   教授
+1005  E  女   助教
+2:
+ 课程   名字     课程   职称
+编号                 
+1001  A    C++  副教授
+1002  B  计算机导论   讲师
+1004  D     汇编   教授
+1001  A   数据结构  副教授
+3001  X  马克思原理   讲师
+2.1:
+   名字 性别   职称     课程
+0  A  男  副教授    C++
+1  A  男  副教授   数据结构
+2  B  女   讲师  计算机导论
+3  D  男   教授     汇编
+3:
+   名字 性别 职称_ 1     课程 职称_2
+0  A  男   副教授    C++  副教授
+1  A  男   副教授   数据结构  副教授
+2  B  女    讲师  计算机导论   讲师
+3  D  男    教授     汇编   教授
+4:
+   名字 性别   职称     课程
+0  A  男  副教授    C++
+1  A  男  副教授   数据结构
+2  B  女   讲师  计算机导论
+3  C  男   助教    NaN
+4  D  男   教授     汇编
+5  E  女   助教    NaN
+5:
+   名字   性别   职称     课程
+0  A    男  副教授    C++
+1  A    男  副教授   数据结构
+2  B    女   讲师  计算机导论
+3  D    男   教授     汇编
+4  X  NaN   讲师  马克思原理
+6:
+   名字   性别   职称     课程
+0  A    男  副教授    C++
+1  A    男  副教授   数据结构
+2  B    女   讲师  计算机导论
+3  C    男   助教    NaN
+4  D    男   教授     汇编
+5  E    女   助教    NaN
+6  X  NaN   讲师  马克思原理
+7:
+   名字 性别   职称     课程
+0  A  男  副教授    C++
+1  A  男  副教授   数据结构
+2  B  女   讲师  计算机导论
+3  D  男   教授     汇编</code></pre>
+<h2 id="Series对象连接"><a href="#Series对象连接" class="headerlink" title="Series对象连接"></a>Series对象连接</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#轴向连接-Concat</span></span><br><span class="line">s1=pd.Series([<span class="number">1</span>,<span class="number">2</span>],index=list(<span class="string">&#x27;ab&#x27;</span>))</span><br><span class="line">s2=pd.Series([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],index=list(<span class="string">&#x27;bde&#x27;</span>))</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s1)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, s2)</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, pd.concat([s1,s2]))</span><br><span class="line"></span><br><span class="line"><span class="comment">#横向连接</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, pd.concat([s1,s2],axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ a    1
+b    2
+dtype: int64
+2:
+ b    3
+d    4
+e    5
+dtype: int64
+3:
+ a    1
+b    2
+b    3
+d    4
+e    5
+dtype: int64
+3:
+      0    1
+a  1.0  NaN
+b  2.0  3.0
+d  NaN  4.0
+e  NaN  5.0</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#轴向连接-Concat</span></span><br><span class="line">s1=pd.Series([<span class="number">1</span>,<span class="number">2</span>],index=list(<span class="string">&#x27;ab&#x27;</span>))</span><br><span class="line">s2=pd.Series([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],index=list(<span class="string">&#x27;bde&#x27;</span>))</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s1)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, s2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#用内连接求交集(连接方式，共有&#x27;inner&#x27;, &#x27;left&#x27; ,right&#x27;，&#x27;outer&#x27;)</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, pd.concat([s1,s2],axis=<span class="number">1</span>,join=<span class="string">&#x27;inner&#x27;</span> ))</span><br><span class="line"></span><br><span class="line"><span class="comment">#指定部分索引进行连接</span></span><br><span class="line"><span class="comment"># print(&#x27;4:\n&#x27;, pd.concat([s1,s2],axis=1,join_axes=[s1.index])</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建层次化索引</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, pd.concat([s1,s2],keys=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">#当纵向连接时keys为列名</span></span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, pd.concat([s1,s2],keys=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;d&#x27;</span>],axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ a    1
+b    2
+dtype: int64
+2:
+ b    3
+d    4
+e    5
+dtype: int64
+3:
+    0  1
+b  2  3
+5:
+ a  a    1
+   b    2
+b  b    3
+   d    4
+   e    5
+dtype: int64
+6:
+      a    d
+a  1.0  NaN
+b  2.0  3.0
+d  NaN  4.0
+e  NaN  5.0</code></pre>
+<h2 id="Dataframe对象的连接"><a href="#Dataframe对象的连接" class="headerlink" title="Dataframe对象的连接"></a>Dataframe对象的连接</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df3=pd.DataFrame(&#123; <span class="string">&#x27;Red&#x27;</span> :[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>], <span class="string">&#x27;Green&#x27;</span> :[<span class="number">5</span>,<span class="number">0</span>,<span class="number">3</span>]&#125;, index=list( <span class="string">&#x27;abd&#x27;</span>))</span><br><span class="line">df4=pd.DataFrame(&#123; <span class="string">&#x27;Blue&#x27;</span>:[<span class="number">1</span>,<span class="number">9</span>],<span class="string">&#x27;Yellow&#x27;</span>:[<span class="number">6</span>,<span class="number">6</span>]&#125;,index=list(<span class="string">&#x27;ce&#x27;</span>) )</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df3)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df4)</span><br><span class="line"><span class="comment"># pd.concat([df3,df4] )</span></span><br><span class="line"><span class="comment"># pd.concat([df3,df4],axis=1,keys=[ &#x27;A&#x27;,&#x27;B&#x27;])</span></span><br><span class="line"><span class="comment">#用字典的方式连接同样可以创建层次化列索引</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, pd.concat(&#123;<span class="string">&#x27;A&#x27;</span> :df3, <span class="string">&#x27;B&#x27;</span> :df4&#125;,axis=<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+    Red  Green
+a    1      5
+b    3      0
+d    5      3
+2:
+    Blue  Yellow
+c     1       6
+e     9       6
+3:
+      A          B       
+   Red Green Blue Yellow
+a  1.0   5.0  NaN    NaN
+b  3.0   0.0  NaN    NaN
+d  5.0   3.0  NaN    NaN
+c  NaN   NaN  1.0    6.0
+e  NaN   NaN  9.0    6.0</code></pre>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/27/andas-note1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/26/Numpy-note2/" class="archive-article-date">
-  	<time datetime="2020-11-26T11:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/26/Numpy-note2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Numpy_note2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/26/Numpy-note2/">Numpy_note2</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/" class="archive-article-date">
-  	<time datetime="2020-11-25T12:20:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/">hexo文章添加图片，音乐，视频</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/25/Matplotlib-note/" class="archive-article-date">
-  	<time datetime="2020-11-25T11:29:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/25/Matplotlib-note/">Matplotlib_note</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/" class="archive-article-date">
-  	<time datetime="2020-10-28T16:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/">查找网页api</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/" class="archive-article-date">
-  	<time datetime="2020-10-16T09:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/">Numpy_note1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/" class="archive-article-date">
-  	<time datetime="2020-10-11T02:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/">个人简历</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/hello-world/" class="archive-article-date">
-  	<time datetime="2020-10-10T15:44:14.341Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -392,8 +1089,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
