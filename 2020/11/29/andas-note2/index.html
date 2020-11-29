@@ -16,7 +16,7 @@
 <meta property="og:description" content="pandas相关内容多层索引创建多层索引 Series创建多层索引 123456789import pandas as pdimport randomimport numpy as nps &#x3D; pd.Series(np.random.randint(0, 150, size&#x3D;6), index&#x3D;list(&amp;#x27;abcdef&amp;#x27;))print(&amp;#x27;1:\n&amp;#x27;, s)s">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T12:44:04.000Z">
-<meta property="article:modified_time" content="2020-11-29T12:44:41.485Z">
+<meta property="article:modified_time" content="2020-11-29T13:56:07.741Z">
 <meta property="article:author" content="Double55">
 <meta name="twitter:card" content="summary">
   
@@ -751,7 +751,7 @@ b     4.000000  2.828427     2     4    14  4.242641     2     6</code></pre>
 
 
 <h3 id="apply-函数"><a href="#apply-函数" class="headerlink" title="apply()函数"></a>apply()函数</h3><p>apply是pandas里面所有函数自由度最高的函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame(&#123;<span class="string">&#x27;sex&#x27;</span> :list( <span class="string">&#x27;FFMFMMF&#x27;</span>), <span class="string">&#x27;smoker&#x27;</span> :list( <span class="string">&#x27;YNYYNYY&#x27;</span>),<span class="string">&#x27;age&#x27;</span> :[<span class="number">21</span>,<span class="number">30</span>,<span class="number">17</span>,<span class="number">37</span>,<span class="number">40</span>,<span class="number">18</span>,<span class="number">26</span>], <span class="string">&#x27;weight&#x27;</span> :[<span class="number">120</span>,<span class="number">100</span>, <span class="number">132</span>,<span class="number">140</span>,<span class="number">94</span>,<span class="number">89</span>, <span class="number">123</span>]&#125;)</span><br><span class="line">print(df1)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bin_age</span>(<span class="params">age</span>):</span></span><br><span class="line">    <span class="keyword">if</span> age &gt;=<span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="comment">#抽烟的年龄大于等18的</span></span><br><span class="line">print(df1[<span class="string">&#x27;age&#x27;</span>].apply(bin_age))</span><br><span class="line">df1[<span class="string">&#x27;age&#x27;</span>] = df1[<span class="string">&#x27;age&#x27;</span>].apply(bin_age)</span><br><span class="line">print(df1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame(&#123;<span class="string">&#x27;sex&#x27;</span> :list( <span class="string">&#x27;FFMFMMF&#x27;</span>), <span class="string">&#x27;smoker&#x27;</span> :list( <span class="string">&#x27;YNYYNYY&#x27;</span>),<span class="string">&#x27;age&#x27;</span> :[<span class="number">21</span>,<span class="number">30</span>,<span class="number">17</span>,<span class="number">37</span>,<span class="number">40</span>,<span class="number">18</span>,<span class="number">26</span>], <span class="string">&#x27;weight&#x27;</span> :[<span class="number">120</span>,<span class="number">100</span>, <span class="number">132</span>,<span class="number">140</span>,<span class="number">94</span>,<span class="number">89</span>, <span class="number">123</span>]&#125;)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bin_age</span>(<span class="params">age</span>):</span></span><br><span class="line">    <span class="keyword">if</span> age &gt;=<span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="comment">#抽烟的年龄大于等18的</span></span><br><span class="line">print(df1[<span class="string">&#x27;age&#x27;</span>].apply(bin_age))</span><br><span class="line">df1[<span class="string">&#x27;age&#x27;</span>] = df1[<span class="string">&#x27;age&#x27;</span>].apply(bin_age)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1)</span><br></pre></td></tr></table></figure>
 
 <pre><code>  sex smoker  age  weight
 0   F      Y   21     120
@@ -769,7 +769,8 @@ b     4.000000  2.828427     2     4    14  4.242641     2     6</code></pre>
 5    1
 6    1
 Name: age, dtype: int64
-  sex smoker  age  weight
+1
+   sex smoker  age  weight
 0   F      Y    1     120
 1   F      N    1     100
 2   M      Y    0     132
@@ -777,6 +778,95 @@ Name: age, dtype: int64
 4   M      N    1      94
 5   M      Y    1      89
 6   F      Y    1     123</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>age</th>
+      <th>weight</th>
+    </tr>
+    <tr>
+      <th>smoker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">N</th>
+      <th>4</th>
+      <td>M</td>
+      <td>N</td>
+      <td>1</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>F</td>
+      <td>N</td>
+      <td>1</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Y</th>
+      <th>2</th>
+      <td>M</td>
+      <td>Y</td>
+      <td>0</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>F</td>
+      <td>Y</td>
+      <td>1</td>
+      <td>140</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame(&#123;<span class="string">&#x27;sex&#x27;</span> :list( <span class="string">&#x27;FFMFMMF&#x27;</span>), <span class="string">&#x27;smoker&#x27;</span> :list( <span class="string">&#x27;YNYYNYY&#x27;</span>),<span class="string">&#x27;age&#x27;</span> :[<span class="number">21</span>,<span class="number">30</span>,<span class="number">17</span>,<span class="number">37</span>,<span class="number">40</span>,<span class="number">18</span>,<span class="number">26</span>], <span class="string">&#x27;weight&#x27;</span> :[<span class="number">120</span>,<span class="number">100</span>, <span class="number">132</span>,<span class="number">140</span>,<span class="number">94</span>,<span class="number">89</span>, <span class="number">123</span>]&#125;)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">top</span>(<span class="params">smoker, col, n=<span class="number">5</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> smoker.sort_values(by=col)[-n:]</span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1.groupby(<span class="string">&#x27;smoker&#x27;</span>).apply(top, col=<span class="string">&#x27;weight&#x27;</span>, n=<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+   sex smoker  age  weight
+0   F      Y   21     120
+1   F      N   30     100
+2   M      Y   17     132
+3   F      Y   37     140
+4   M      N   40      94
+5   M      Y   18      89
+6   F      Y   26     123
+2:
+          sex smoker  age  weight
+smoker                          
+N      4   M      N   40      94
+       1   F      N   30     100
+Y      2   M      Y   17     132
+       3   F      Y   37     140</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
       
