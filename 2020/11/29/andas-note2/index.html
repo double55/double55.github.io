@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>个人简历 | Double55的blog</title>
+  <title>Pandas_note2 | Double55的blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本资料姓   名：李刘俊  出生日期：1998年01月15日 性   别：男 毕业学校：信阳学院 专   业：计算机科学与技术 联系电话：17633811790">
+  <meta name="description" content="pandas相关内容多层索引创建多层索引 Series创建多层索引 123456789import pandas as pdimport randomimport numpy as nps &#x3D; pd.Series(np.random.randint(0, 150, size&#x3D;6), index&#x3D;list(&amp;#x27;abcdef&amp;#x27;))print(&amp;#x27;1:\n&amp;#x27;, s)s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人简历">
-<meta property="og:url" content="http://example.com/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/index.html">
+<meta property="og:title" content="Pandas_note2">
+<meta property="og:url" content="http://example.com/2020/11/29/andas-note2/index.html">
 <meta property="og:site_name" content="Double55的blog">
-<meta property="og:description" content="基本资料姓   名：李刘俊  出生日期：1998年01月15日 性   别：男 毕业学校：信阳学院 专   业：计算机科学与技术 联系电话：17633811790">
+<meta property="og:description" content="pandas相关内容多层索引创建多层索引 Series创建多层索引 123456789import pandas as pdimport randomimport numpy as nps &#x3D; pd.Series(np.random.randint(0, 150, size&#x3D;6), index&#x3D;list(&amp;#x27;abcdef&amp;#x27;))print(&amp;#x27;1:\n&amp;#x27;, s)s">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-11T02:18:00.000Z">
-<meta property="article:modified_time" content="2020-10-14T01:47:13.262Z">
+<meta property="article:published_time" content="2020-11-29T12:44:04.000Z">
+<meta property="article:modified_time" content="2020-11-29T12:44:41.485Z">
 <meta property="article:author" content="Double55">
 <meta name="twitter:card" content="summary">
   
@@ -142,48 +142,642 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-个人简历-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-andas-note2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      个人简历
+      Pandas_note2
     </h1>
   
 
         
-        <a href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/" class="archive-article-date">
-  	<time datetime="2020-10-11T02:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
+        <a href="/2020/11/29/andas-note2/" class="archive-article-date">
+  	<time datetime="2020-11-29T12:44:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基本资料"><a href="#基本资料" class="headerlink" title="基本资料"></a>基本资料</h1><p>姓   名：李刘俊 </p>
-<p>出生日期：1998年01月15日</p>
-<p>性   别：男</p>
-<p>毕业学校：信阳学院</p>
-<p>专   业：计算机科学与技术</p>
-<p>联系电话：17633811790</p>
+        <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><h2 id="多层索引"><a href="#多层索引" class="headerlink" title="多层索引"></a>多层索引</h2><p>创建多层索引</p>
+<p>Series创建多层索引</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">s = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">150</span>, size=<span class="number">6</span>), index=list(<span class="string">&#x27;abcdef&#x27;</span>))</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s)</span><br><span class="line"></span><br><span class="line">s1 = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">150</span>, size=<span class="number">6</span>),index=[[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;c&#x27;</span>],[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s1)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<p>邮箱地址：<a href="mailto:&#x64;&#x6f;&#117;&#98;&#x6c;&#x65;&#x6c;&#48;&#x32;&#x30;&#53;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#x64;&#x6f;&#117;&#98;&#x6c;&#x65;&#x6c;&#48;&#x32;&#x30;&#53;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
-<p><a target="_blank" rel="noopener" href="https://double55.github.io/">个人Bolg</a></p>
-<h1 id="求职意向"><a href="#求职意向" class="headerlink" title="求职意向"></a>求职意向</h1><p>目标职位：数据类</p>
-<h1 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h1><p>熟悉Python</p>
-<p>熟练使用request模块，scrapy框架进行对网页的爬取</p>
-<p>熟练使用xpath，css选择器对数据的抓取</p>
-<p>熟悉Mysql，MongoDB，Redis数据库的创建以及连接使用数据库</p>
-<p>熟悉HTML，CSS</p>
-<h1 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h1><p>学校名称：信阳学院</p>
-<p>学   历：本科</p>
-<p>在校时间：2017年09月~2021年06月</p>
-<p>主修课程：C，JAVA，Mysql数据库，Android，PHP，计算机网络，算法设计，计算机组成原理，数据结构，计算机操作系统。</p>
-<p>自学课程：Python，scrapy框架，HTML，CSS</p>
-<h1 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h1><p>我非常热爱计算机这个领域，特别是对数据方面。在空闲时间里，先后自学了python和爬虫。自己使用scrapy框架爬取过影评和电影排名等，并且存储到MongoDB或者Mysql数据库里，还做了一个小的脚本，用来爬取到可用的url，并且输出可以用的格式。并且自学搭建博客准备记录所学经验以及解决问题的方法。善于学习新知识，努力提升自己。坚信越努力越幸运。</p>
+<pre><code>1:
+ a     14
+b     93
+c     59
+d     81
+e    103
+f    106
+dtype: int32
+1:
+ a  期中    137
+   期末    133
+b  期中     92
+   期末      4
+c  期中    147
+   期末     26
+dtype: int32</code></pre>
+<h2 id="DataFrame创建多层索引"><a href="#DataFrame创建多层索引" class="headerlink" title="DataFrame创建多层索引"></a>DataFrame创建多层索引</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df1 = pd.DataFrame(np.random.randint(<span class="number">0</span>,<span class="number">150</span>,size=(<span class="number">6</span>,<span class="number">4</span>)),columns = [ <span class="string">&#x27;zs&#x27;</span>,<span class="string">&#x27;1s&#x27;</span>,<span class="string">&#x27;ww&#x27;</span>,<span class="string">&#x27;zl&#x27;</span>],index = [[<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27;En&#x27;</span>,<span class="string">&#x27;En&#x27;</span>],[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]])</span><br><span class="line">print(df1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>            zs   1s   ww   zl
+python 期中  145   15   42   39
+       期末    7  149  139   20
+math   期中  124   97   14   21
+       期末   18   33   94   28
+En     期中   21  139   48  133
+       期末  145  136  143  111</code></pre>
+<h2 id="特定结构"><a href="#特定结构" class="headerlink" title="特定结构"></a>特定结构</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">class1=[ <span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27;En&#x27;</span>,<span class="string">&#x27;En&#x27;</span>]</span><br><span class="line">class2=[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]</span><br><span class="line">m_index2 = pd.MultiIndex.from_arrays([class1,class2])</span><br><span class="line">df2 = pd.DataFrame(np.random.randint(<span class="number">0</span>,<span class="number">150</span>,(<span class="number">6</span>,<span class="number">4</span>)),index=m_index2 )</span><br><span class="line">print(df2 )</span><br><span class="line"></span><br><span class="line">class1=[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>, <span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]</span><br><span class="line">class2=[<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27;En&#x27;</span>,<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27;En&#x27;</span>]</span><br><span class="line">m_index2 = pd.MultiIndex.from_arrays([class1,class2])</span><br><span class="line">df2=pd.DataFrame(np.random.randint(<span class="number">0</span>,<span class="number">150</span>,(<span class="number">6</span>,<span class="number">4</span>)),index=m_index2 )</span><br><span class="line">print(df2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>            0    1    2    3
+python 期中  32   60    7   22
+       期末  88  126  110  101
+math   期中  40  142  100  107
+       期末  89   20   67   68
+En     期中  82  104   89  100
+       期末  82    6   25   80
+             0    1    2    3
+期中 python   17    7  144   27
+   math     44    6   30   20
+   En       73  103  107   83
+期末 python   95   54   43  147
+   math    138  114  104   65
+   En      115   13  147  106</code></pre>
+<h2 id="product构造"><a href="#product构造" class="headerlink" title="product构造"></a>product构造</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">class1=[ <span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27; En&#x27;</span> ]</span><br><span class="line">class2=[ <span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]</span><br><span class="line">m_index2 =pd.MultiIndex.from_product([class1,class2])</span><br><span class="line">df2=pd.DataFrame(np.random.randint(<span class="number">0</span>,<span class="number">150</span>,(<span class="number">6</span>,<span class="number">4</span>)),index=m_index2)</span><br><span class="line">print(df2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>             0    1   2    3
+python 期中  106   58  30   62
+       期末  138  130   3   72
+math   期中   87    9  39   77
+       期末  114   24  82   35
+ En    期中   10   60  43  145
+       期末  132   68  30   65</code></pre>
+<h2 id="多层索引对象的索引–Series"><a href="#多层索引对象的索引–Series" class="headerlink" title="多层索引对象的索引–Series"></a>多层索引对象的索引–Series</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">s = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">150</span>, size=<span class="number">6</span>),index=[[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;c&#x27;</span>],[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s)</span><br><span class="line"></span><br><span class="line"><span class="comment">#取一个第一级索引</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, s[<span class="string">&#x27;a&#x27;</span>])</span><br><span class="line"><span class="comment">#取多个第一级索引</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, s[[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据索引获取值</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, s[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;期末&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># loc方法取值</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, s.loc[ <span class="string">&#x27;a&#x27;</span>])</span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, s.loc[[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]])</span><br><span class="line">print(<span class="string">&#x27;7:\n&#x27;</span>, s.loc[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># iloc方法取值(iloc计算的事最内层索引)</span></span><br><span class="line">print(<span class="string">&#x27;8:\n&#x27;</span>, s.iloc[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">&#x27;9:\n&#x27;</span>, s.iloc[<span class="number">1</span>:<span class="number">4</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ a  期中     35
+   期末     22
+b  期中    134
+   期末     68
+c  期中     47
+   期末     44
+dtype: int32
+2:
+ 期中    35
+期末    22
+dtype: int32
+3:
+ a  期中     35
+   期末     22
+b  期中    134
+   期末     68
+dtype: int32
+4:
+ 22
+5:
+ 期中    35
+期末    22
+dtype: int32
+6:
+ a  期中     35
+   期末     22
+b  期中    134
+   期末     68
+dtype: int32
+7:
+ 22
+8:
+ 22
+9:
+ a  期末     22
+b  期中    134
+   期末     68
+dtype: int32</code></pre>
+<h2 id="多层索引对象的索引–DataFrame"><a href="#多层索引对象的索引–DataFrame" class="headerlink" title="多层索引对象的索引–DataFrame"></a>多层索引对象的索引–DataFrame</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">class1=[ <span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;math&#x27;</span>,<span class="string">&#x27;En&#x27;</span>]</span><br><span class="line">class2=[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]</span><br><span class="line">m_index2 =pd.MultiIndex.from_product([class1,class2])</span><br><span class="line">df2=pd.DataFrame(np.random.randint(<span class="number">0</span>,<span class="number">150</span>,(<span class="number">6</span>,<span class="number">4</span>)),index=m_index2)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df2)</span><br><span class="line"><span class="comment">#获取列</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df2[<span class="number">0</span>] )</span><br><span class="line"><span class="comment">#一级索引</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df2.loc[ <span class="string">&#x27;python&#x27;</span>])</span><br><span class="line"><span class="comment">#多个一级索引</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df2.loc[[<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;math&#x27;</span>]])</span><br><span class="line"><span class="comment">#取一行</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df2.loc[ <span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>])</span><br><span class="line"><span class="comment">#取一值</span></span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, df2.loc[ <span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>][<span class="number">0</span>])</span><br><span class="line"><span class="comment"># iloc是只取最内层 的索引的</span></span><br><span class="line">print(<span class="string">&#x27;7:\n&#x27;</span>, df2.iloc[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+              0    1    2    3
+python 期中  102  124   78   61
+       期末  138  123   81  119
+math   期中   69   82   41  100
+       期末   50   52   98  129
+En     期中   82  121  102  112
+       期末   87  130    3   84
+2:
+ python  期中    102
+        期末    138
+math    期中     69
+        期末     50
+En      期中     82
+        期末     87
+Name: 0, dtype: int32
+3:
+       0    1   2    3
+期中  102  124  78   61
+期末  138  123  81  119
+4:
+              0    1   2    3
+python 期中  102  124  78   61
+       期末  138  123  81  119
+math   期中   69   82  41  100
+       期末   50   52  98  129
+5:
+ 0    138
+1    123
+2     81
+3    119
+Name: (python, 期末), dtype: int32
+6:
+ 138
+7:
+ 0    102
+1    124
+2     78
+3     61
+Name: (python, 期中), dtype: int32</code></pre>
+<h1 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 1.生成一段时间范围</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">该函数主要用于生成一个固定频率的时间索引，在调用构造方法时，必须指定start、 end、 per iods中的两个参数值，否则报错。</span></span><br><span class="line"><span class="string">时间序列频率:</span></span><br><span class="line"><span class="string">    D    日历日的每天</span></span><br><span class="line"><span class="string">    B    工作日的每天</span></span><br><span class="line"><span class="string">    H    每小时</span></span><br><span class="line"><span class="string">    T或min    每分钟</span></span><br><span class="line"><span class="string">    S    每秒</span></span><br><span class="line"><span class="string">    L或ms    每毫秒</span></span><br><span class="line"><span class="string">    U    每微秒</span></span><br><span class="line"><span class="string">    M    日历日的月底日期</span></span><br><span class="line"><span class="string">    BM    工作日的月底日期</span></span><br><span class="line"><span class="string">    MS    日历日的月初日期</span></span><br><span class="line"><span class="string">    BMS    工作日的月初日期</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">date = pd.date_range(start= <span class="string">&#x27;20190501&#x27;</span> ,end= <span class="string">&#x27;20190530&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, date)</span><br><span class="line"><span class="comment"># freq: 日期偏移量，取值为string,默认为&#x27;D&#x27;，freq=&#x27;1h30min&#x27; freq= &#x27;10D &#x27;</span></span><br><span class="line"><span class="comment"># periods: 固定时期，取值为整数或None</span></span><br><span class="line">date = pd.date_range(start= <span class="string">&#x27;20190501&#x27;</span> ,periods=<span class="number">11</span>,freq=<span class="string">&#x27;10D&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, date)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据closed参数选择是否包含开始和结束时间closed-None, left包 含开始时间，不包含结束时间，right与之相反。</span></span><br><span class="line"></span><br><span class="line">data_time =pd.date_range(start= <span class="string">&#x27;2019-01-09&#x27;</span> ,end= <span class="string">&#x27;2019-01-14&#x27;</span> ,closed= <span class="string">&#x27;left&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, data_time)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ DatetimeIndex([&#39;2019-05-01&#39;, &#39;2019-05-02&#39;, &#39;2019-05-03&#39;, &#39;2019-05-04&#39;,
+               &#39;2019-05-05&#39;, &#39;2019-05-06&#39;, &#39;2019-05-07&#39;, &#39;2019-05-08&#39;,
+               &#39;2019-05-09&#39;, &#39;2019-05-10&#39;, &#39;2019-05-11&#39;, &#39;2019-05-12&#39;,
+               &#39;2019-05-13&#39;, &#39;2019-05-14&#39;, &#39;2019-05-15&#39;, &#39;2019-05-16&#39;,
+               &#39;2019-05-17&#39;, &#39;2019-05-18&#39;, &#39;2019-05-19&#39;, &#39;2019-05-20&#39;,
+               &#39;2019-05-21&#39;, &#39;2019-05-22&#39;, &#39;2019-05-23&#39;, &#39;2019-05-24&#39;,
+               &#39;2019-05-25&#39;, &#39;2019-05-26&#39;, &#39;2019-05-27&#39;, &#39;2019-05-28&#39;,
+               &#39;2019-05-29&#39;, &#39;2019-05-30&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+2:
+ DatetimeIndex([&#39;2019-05-01&#39;, &#39;2019-05-11&#39;, &#39;2019-05-21&#39;, &#39;2019-05-31&#39;,
+               &#39;2019-06-10&#39;, &#39;2019-06-20&#39;, &#39;2019-06-30&#39;, &#39;2019-07-10&#39;,
+               &#39;2019-07-20&#39;, &#39;2019-07-30&#39;, &#39;2019-08-09&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;10D&#39;)
+3:
+ DatetimeIndex([&#39;2019-01-09&#39;, &#39;2019-01-10&#39;, &#39;2019-01-11&#39;, &#39;2019-01-12&#39;,
+               &#39;2019-01-13&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)</code></pre>
+<h2 id="时间序列在DataFrame中的作用"><a href="#时间序列在DataFrame中的作用" class="headerlink" title="时间序列在DataFrame中的作用"></a>时间序列在DataFrame中的作用</h2><h3 id="可以将时间作为索引"><a href="#可以将时间作为索引" class="headerlink" title="可以将时间作为索引"></a>可以将时间作为索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">index = pd.date_range(start=<span class="string">&#x27;20190101&#x27;</span>,periods=<span class="number">10</span>)</span><br><span class="line">df = pd.Series(np.random.randint(<span class="number">0</span>,<span class="number">10</span>,size = <span class="number">10</span>),index=index )</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># truncate这个函数将before指定日期之前的值全部过滤出去, after指定日期之后的值全部过滤出去.</span></span><br><span class="line">after = df.truncate(after=<span class="string">&#x27;2019-01-8&#x27;</span> )</span><br><span class="line">before = df.truncate(before=<span class="string">&#x27;2019-01-8&#x27;</span> )</span><br><span class="line">print(<span class="string">&#x27;2.1:\n&#x27;</span>, after)</span><br><span class="line">print(<span class="string">&#x27;2.2:\n&#x27;</span>, before)</span><br><span class="line"></span><br><span class="line">long_ts =pd.Series(np.random.randn(<span class="number">1000</span>),index=pd.date_range( <span class="string">&#x27;1/1/2019&#x27;</span>,periods=<span class="number">1000</span>))</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, long_ts)</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据年份获取</span></span><br><span class="line">result = long_ts[<span class="string">&#x27;2020&#x27;</span>] </span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#年份和日期获取</span></span><br><span class="line">result = long_ts[<span class="string">&#x27;2020-05&#x27;</span>]</span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用切片(前后都包含)</span></span><br><span class="line">result = long_ts[ <span class="string">&#x27;2020-05-01&#x27;</span> : <span class="string">&#x27;2020-05-06&#x27;</span>]</span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, result )</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ 2019-01-01    4
+2019-01-02    5
+2019-01-03    3
+2019-01-04    7
+2019-01-05    1
+2019-01-06    2
+2019-01-07    5
+2019-01-08    7
+2019-01-09    1
+2019-01-10    3
+Freq: D, dtype: int32
+2.1:
+ 2019-01-01    4
+2019-01-02    5
+2019-01-03    3
+2019-01-04    7
+2019-01-05    1
+2019-01-06    2
+2019-01-07    5
+2019-01-08    7
+Freq: D, dtype: int32
+2.2:
+ 2019-01-08    7
+2019-01-09    1
+2019-01-10    3
+Freq: D, dtype: int32
+3:
+ 2019-01-01   -0.747003
+2019-01-02    1.759302
+2019-01-03    1.107173
+2019-01-04    1.157939
+2019-01-05   -0.064175
+                ...   
+2021-09-22   -0.407227
+2021-09-23    1.976528
+2021-09-24    0.567278
+2021-09-25    0.555558
+2021-09-26    0.395521
+Freq: D, Length: 1000, dtype: float64
+4:
+ 2020-01-01   -2.450618
+2020-01-02    2.934376
+2020-01-03    0.773076
+2020-01-04    0.966861
+2020-01-05   -0.889120
+                ...   
+2020-12-27    0.395843
+2020-12-28    0.118505
+2020-12-29    2.067699
+2020-12-30    1.272628
+2020-12-31    0.218565
+Freq: D, Length: 366, dtype: float64
+5:
+ 2020-05-01    0.276507
+2020-05-02   -2.261022
+2020-05-03    2.429348
+2020-05-04   -0.921519
+2020-05-05    2.854276
+2020-05-06    1.514447
+2020-05-07   -0.951737
+2020-05-08    0.125250
+2020-05-09    0.016700
+2020-05-10   -2.716865
+2020-05-11    1.637292
+2020-05-12    1.207684
+2020-05-13   -0.743534
+2020-05-14   -0.889141
+2020-05-15   -0.127926
+2020-05-16   -1.823560
+2020-05-17   -0.305741
+2020-05-18    0.650635
+2020-05-19    0.013440
+2020-05-20    0.481699
+2020-05-21   -1.569899
+2020-05-22    1.086921
+2020-05-23   -0.278116
+2020-05-24    0.321189
+2020-05-25   -0.816119
+2020-05-26   -0.343625
+2020-05-27   -0.294482
+2020-05-28    0.177816
+2020-05-29    0.367771
+2020-05-30    0.541315
+2020-05-31   -0.220752
+Freq: D, dtype: float64
+6:
+ 2020-05-01    0.276507
+2020-05-02   -2.261022
+2020-05-03    2.429348
+2020-05-04   -0.921519
+2020-05-05    2.854276
+2020-05-06    1.514447
+Freq: D, dtype: float64</code></pre>
+<h3 id="通过between-time-返回位于指定时间段的数据集"><a href="#通过between-time-返回位于指定时间段的数据集" class="headerlink" title="通过between_time()返回位于指定时间段的数据集"></a>通过between_time()返回位于指定时间段的数据集</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">index=pd.date_range(<span class="string">&quot;2018-03-17&quot;</span>, <span class="string">&quot;2018-03-30&quot;</span> ,freq=<span class="string">&quot;2H&quot;</span>)</span><br><span class="line">ts =pd.Series(np.random.randn(<span class="number">157</span>),index=index)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, ts.between_time(<span class="string">&quot;7:00&quot;</span>, <span class="string">&quot;17:00&quot;</span>) )</span><br><span class="line"></span><br><span class="line"><span class="comment">#这些操作也都适用于datafr ame</span></span><br><span class="line">index=pd.date_range(<span class="string">&#x27;1/1/2019&#x27;</span>,periods=<span class="number">100</span>)</span><br><span class="line">df=pd.DataFrame(np.random.randn(<span class="number">100</span>,<span class="number">4</span>),index=index)</span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df.loc[<span class="string">&#x27;2019-04&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ 2018-03-17 08:00:00    0.158496
+2018-03-17 10:00:00    1.136829
+2018-03-17 12:00:00   -0.971050
+2018-03-17 14:00:00    0.129147
+2018-03-17 16:00:00    0.579496
+                         ...   
+2018-03-29 08:00:00    0.029979
+2018-03-29 10:00:00    0.239573
+2018-03-29 12:00:00   -1.495647
+2018-03-29 14:00:00   -0.128346
+2018-03-29 16:00:00   -1.544244
+Length: 65, dtype: float64
+2:
+                    0         1         2         3
+2019-04-01 -0.821030  1.047695 -1.070657  3.092798
+2019-04-02 -0.175182  1.127682 -1.887247  0.114575
+2019-04-03  0.347219 -0.416658  0.415317 -1.285728
+2019-04-04 -0.576270  1.453681 -0.617339  2.008050
+2019-04-05  0.850474 -0.454029 -0.823954 -1.293380
+2019-04-06  0.677028 -0.768043  0.554512 -2.071512
+2019-04-07 -0.506169 -1.017980 -1.349503 -0.962679
+2019-04-08 -1.623125 -2.143144 -0.260012  0.138428
+2019-04-09 -1.330677 -0.043192 -1.092210 -0.965962
+2019-04-10 -0.529204 -0.188309  1.064026  0.773420</code></pre>
+<h3 id="移位日期"><a href="#移位日期" class="headerlink" title="移位日期"></a>移位日期</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pytz</span><br><span class="line"><span class="keyword">import</span> datetime <span class="keyword">as</span> dt</span><br><span class="line"></span><br><span class="line">ts = pd.Series(np.random.randn(<span class="number">10</span>),index=pd.date_range(<span class="string">&#x27;1/1/2019&#x27;</span>,periods=<span class="number">10</span>))</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, ts)</span><br><span class="line"></span><br><span class="line"><span class="comment">#移动数据，索引不变，默认由NaN填充</span></span><br><span class="line"><span class="comment"># periods: 移动的位数负数是向上移动</span></span><br><span class="line"><span class="comment"># fill_ value: 移动后填充数据</span></span><br><span class="line"><span class="comment"># freq: 日期偏移量</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, ts.shift(periods=<span class="number">2</span>,freq=<span class="string">&#x27;D&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#通过tshift() 将索引移动指定的时间:</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, ts.tshift(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#将时间戳转化成时间根式</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, pd.to_datetime(<span class="number">1554970740000</span>,unit= <span class="string">&#x27;ms&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># utc是协调世界时，时区是以UTC的偏移量的形式表示的，但是注意设置utc=True,是i让pandas对象具有时区性质，对于- -列进行转换的，会造成转换错误</span></span><br><span class="line"><span class="comment"># unit=&#x27; ms&#x27;设置粒度是到毫秒级别的</span></span><br><span class="line"><span class="comment">#时区名字</span></span><br><span class="line"><span class="comment"># import pytz</span></span><br><span class="line"><span class="comment"># print(pytz .common_ timezones )  2019-5-1</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, pd.to_datetime(<span class="number">1554970740000</span>,unit=<span class="string">&#x27;ms&#x27;</span>).tz_localize(<span class="string">&#x27;UTC&#x27;</span>).tz_convert( <span class="string">&#x27;Asia/Shanghai&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#处理一列</span></span><br><span class="line"><span class="comment"># df = pd.DataFrame([1554970740000,1554980740000,1554970860000],columns =[&#x27;time_stamp&#x27;])</span></span><br><span class="line"><span class="comment"># print(df)</span></span><br><span class="line"><span class="comment"># pd.to_datetime(df.columns[&#x27;time_stamp&#x27;],unit= &#x27;ms&#x27;).tz_localize( &#x27;UTC&#x27;).tz_convert( &#x27;Asia/Shanghai&#x27;)#先赋予标准时区,再转换到东八区</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理中文</span></span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, pd.to_datetime(<span class="string">&#x27;2019年10月10日&#x27;</span>,format=<span class="string">&#x27;%Y年%m月%d日&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+ 2019-01-01    0.288320
+2019-01-02   -1.411528
+2019-01-03   -1.333638
+2019-01-04   -1.520541
+2019-01-05    0.435902
+2019-01-06   -0.821698
+2019-01-07    0.310023
+2019-01-08   -1.339835
+2019-01-09    0.049740
+2019-01-10   -0.891641
+Freq: D, dtype: float64
+2:
+ 2019-01-03    0.288320
+2019-01-04   -1.411528
+2019-01-05   -1.333638
+2019-01-06   -1.520541
+2019-01-07    0.435902
+2019-01-08   -0.821698
+2019-01-09    0.310023
+2019-01-10   -1.339835
+2019-01-11    0.049740
+2019-01-12   -0.891641
+Freq: D, dtype: float64
+3:
+ 2019-01-03    0.288320
+2019-01-04   -1.411528
+2019-01-05   -1.333638
+2019-01-06   -1.520541
+2019-01-07    0.435902
+2019-01-08   -0.821698
+2019-01-09    0.310023
+2019-01-10   -1.339835
+2019-01-11    0.049740
+2019-01-12   -0.891641
+Freq: D, dtype: float64
+4:
+ 2019-04-11 08:19:00
+5:
+ 2019-04-11 16:19:00+08:00
+6:
+ 2019-10-10 00:00:00</code></pre>
+<h2 id="分组聚合"><a href="#分组聚合" class="headerlink" title="分组聚合"></a>分组聚合</h2><h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df=pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span> :[<span class="string">&#x27;BOSS&#x27;</span>,<span class="string">&#x27;Lilei&#x27;</span>,<span class="string">&#x27;Lilei&#x27;</span>,<span class="string">&#x27;Han&#x27;</span>,<span class="string">&#x27;BOSS&#x27;</span>,<span class="string">&#x27;BOSS&#x27;</span>,<span class="string">&#x27;Han&#x27;</span> ,<span class="string">&#x27;BOSS&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;Year&#x27;</span> :[<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>],</span><br><span class="line">    <span class="string">&#x27;Salary&#x27;</span> :[<span class="number">999999</span>, <span class="number">20000</span>, <span class="number">25000</span>, <span class="number">3000</span> , <span class="number">999999</span> , <span class="number">99999</span>, <span class="number">3500</span>, <span class="number">99999</span>],</span><br><span class="line">    <span class="string">&#x27;Bonus &#x27;</span>:[<span class="number">100000</span> ,<span class="number">20000</span> ,<span class="number">20000</span> , <span class="number">5000</span> ,<span class="number">200000</span> , <span class="number">300000</span> , <span class="number">3000</span> ,<span class="number">400000</span> ]</span><br><span class="line">&#125;)</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据name这一-列进行分组</span></span><br><span class="line">group_by_name=df.groupby( <span class="string">&#x27;name&#x27;</span> )</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, type(group_by_name))</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看分组</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, group_by_name.groups)</span><br><span class="line"></span><br><span class="line"><span class="comment">#分组后的数量</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, group_by_name.count())</span><br><span class="line"></span><br><span class="line"><span class="comment">#产看分组的情况</span></span><br><span class="line"><span class="keyword">for</span> name,group <span class="keyword">in</span> group_by_name:</span><br><span class="line">    print(<span class="string">&#x27;4:\n&#x27;</span>, name)<span class="comment">#组的名字</span></span><br><span class="line">    print(<span class="string">&#x27;4.1:\n&#x27;</span>, group)<span class="comment">#组具体内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#可以选择分组</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, group_by_name.get_group( <span class="string">&#x27;BOSS&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#按照某- -列进行分组，将name这一 -列作为分组的键，对year进行分组</span></span><br><span class="line">group_by_name=df[ <span class="string">&#x27;Year&#x27;</span>].groupby(df[ <span class="string">&#x27;name&#x27;</span> ])</span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, group_by_name.count())</span><br></pre></td></tr></table></figure>
+
+<pre><code>    name  Year  Salary  Bonus 
+0   BOSS  2016  999999  100000
+1  Lilei  2016   20000   20000
+2  Lilei  2016   25000   20000
+3    Han  2016    3000    5000
+4   BOSS  2017  999999  200000
+5   BOSS  2017   99999  300000
+6    Han  2017    3500    3000
+7   BOSS  2017   99999  400000
+1:
+ &lt;class &#39;pandas.core.groupby.generic.DataFrameGroupBy&#39;&gt;
+2:
+ &#123;&#39;BOSS&#39;: Int64Index([0, 4, 5, 7], dtype=&#39;int64&#39;), &#39;Han&#39;: Int64Index([3, 6], dtype=&#39;int64&#39;), &#39;Lilei&#39;: Int64Index([1, 2], dtype=&#39;int64&#39;)&#125;
+3:
+        Year  Salary  Bonus 
+name                       
+BOSS      4       4       4
+Han       2       2       2
+Lilei     2       2       2
+4:
+ BOSS
+4.1:
+    name  Year  Salary  Bonus 
+0  BOSS  2016  999999  100000
+4  BOSS  2017  999999  200000
+5  BOSS  2017   99999  300000
+7  BOSS  2017   99999  400000
+4:
+ Han
+4.1:
+   name  Year  Salary  Bonus 
+3  Han  2016    3000    5000
+6  Han  2017    3500    3000
+4:
+ Lilei
+4.1:
+     name  Year  Salary  Bonus 
+1  Lilei  2016   20000   20000
+2  Lilei  2016   25000   20000
+5:
+    name  Year  Salary  Bonus 
+0  BOSS  2016  999999  100000
+4  BOSS  2017  999999  200000
+5  BOSS  2017   99999  300000
+7  BOSS  2017   99999  400000
+6:
+ name
+BOSS     4
+Han      2
+Lilei    2
+Name: Year, dtype: int64</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df=pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span> :[<span class="string">&#x27;BOSS&#x27;</span>,<span class="string">&#x27;Lilei&#x27;</span>,<span class="string">&#x27;Lilei&#x27;</span>,<span class="string">&#x27;Han&#x27;</span>,<span class="string">&#x27;BOSS&#x27;</span>,<span class="string">&#x27;BOSS&#x27;</span>,<span class="string">&#x27;Han&#x27;</span> ,<span class="string">&#x27;BOSS&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;Year&#x27;</span> :[<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>],</span><br><span class="line">    <span class="string">&#x27;Salary&#x27;</span> :[<span class="number">999999</span>, <span class="number">20000</span>, <span class="number">25000</span>, <span class="number">3000</span> , <span class="number">999999</span> , <span class="number">99999</span>, <span class="number">3500</span>, <span class="number">99999</span>],</span><br><span class="line">    <span class="string">&#x27;Bonus &#x27;</span>:[<span class="number">100000</span> ,<span class="number">20000</span> ,<span class="number">20000</span> , <span class="number">5000</span> ,<span class="number">200000</span> , <span class="number">300000</span> , <span class="number">3000</span> ,<span class="number">400000</span> ]</span><br><span class="line">&#125;)</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df)</span><br><span class="line"></span><br><span class="line"><span class="comment">#按照多列进行分组</span></span><br><span class="line">group_by_name_year=df.groupby([ <span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;Year&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name,group <span class="keyword">in</span> group_by_name_year:</span><br><span class="line">    print(<span class="string">&#x27;2:\n&#x27;</span>, name)<span class="comment">#组的名字</span></span><br><span class="line">    print(<span class="string">&#x27;2.1:\n&#x27;</span>, group)<span class="comment">#组具体内容</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">#可以选择分组</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, group_by_name_year.get_group((<span class="string">&#x27;BOSS&#x27;</span>,<span class="number">2016</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment">#将某列数据按数据值分成不同范围段进行分组(groupby) 运算</span></span><br><span class="line">df = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">&#x27;Age&#x27;</span> : np.random.randint(<span class="number">20</span>,<span class="number">70</span>,<span class="number">100</span>),</span><br><span class="line">    <span class="string">&#x27;Sex&#x27;</span>: np.random.choice([ <span class="string">&#x27;M&#x27;</span>,<span class="string">&#x27;F&#x27;</span>],<span class="number">100</span>),</span><br><span class="line">&#125;)</span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df)</span><br><span class="line">age_groups = pd.cut(df[<span class="string">&#x27;Age&#x27;</span>],bins=[<span class="number">19</span>,<span class="number">40</span>,<span class="number">65</span>,<span class="number">100</span>])</span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, age_groups)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照 age_groups 分组</span></span><br><span class="line">g_b = df.groupby(age_groups)</span><br><span class="line"><span class="comment"># 查看分组情况</span></span><br><span class="line">print(<span class="string">&#x27;5.1:\n&#x27;</span>, g_b.groups)</span><br><span class="line">print(<span class="string">&#x27;6:\n&#x27;</span>, df.groupby(age_groups).count())</span><br><span class="line"><span class="comment">#按&#x27;Age&#x27;分组范围和性别(sex) 进行制作交叉表</span></span><br><span class="line">print(<span class="string">&#x27;7:\n&#x27;</span>, pd.crosstab(age_groups,df[<span class="string">&#x27;Sex&#x27;</span> ] ))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1:
+     name  Year  Salary  Bonus 
+0   BOSS  2016  999999  100000
+1  Lilei  2016   20000   20000
+2  Lilei  2016   25000   20000
+3    Han  2016    3000    5000
+4   BOSS  2017  999999  200000
+5   BOSS  2017   99999  300000
+6    Han  2017    3500    3000
+7   BOSS  2017   99999  400000
+2:
+ (&#39;BOSS&#39;, 2016)
+2.1:
+    name  Year  Salary  Bonus 
+0  BOSS  2016  999999  100000
+2:
+ (&#39;BOSS&#39;, 2017)
+2.1:
+    name  Year  Salary  Bonus 
+4  BOSS  2017  999999  200000
+5  BOSS  2017   99999  300000
+7  BOSS  2017   99999  400000
+2:
+ (&#39;Han&#39;, 2016)
+2.1:
+   name  Year  Salary  Bonus 
+3  Han  2016    3000    5000
+2:
+ (&#39;Han&#39;, 2017)
+2.1:
+   name  Year  Salary  Bonus 
+6  Han  2017    3500    3000
+2:
+ (&#39;Lilei&#39;, 2016)
+2.1:
+     name  Year  Salary  Bonus 
+1  Lilei  2016   20000   20000
+2  Lilei  2016   25000   20000
+3:
+    name  Year  Salary  Bonus 
+0  BOSS  2016  999999  100000
+4:
+     Age Sex
+0    36   M
+1    54   M
+2    24   M
+3    33   F
+4    28   F
+..  ...  ..
+95   30   M
+96   60   F
+97   65   M
+98   27   F
+99   64   F
+
+[100 rows x 2 columns]
+5:
+ 0     (19, 40]
+1     (40, 65]
+2     (19, 40]
+3     (19, 40]
+4     (19, 40]
+        ...   
+95    (19, 40]
+96    (40, 65]
+97    (40, 65]
+98    (19, 40]
+99    (40, 65]
+Name: Age, Length: 100, dtype: category
+Categories (3, interval[int64]): [(19, 40] &lt; (40, 65] &lt; (65, 100]]
+5.1:
+ &#123;Interval(19, 40, closed=&#39;right&#39;): Int64Index([ 0,  2,  3,  4,  6,  7,  8, 11, 17, 19, 20, 22, 23, 26, 27, 31, 33,
+            37, 39, 45, 46, 48, 51, 52, 55, 57, 59, 60, 63, 68, 76, 78, 80, 82,
+            84, 85, 86, 89, 92, 95, 98],
+           dtype=&#39;int64&#39;), Interval(40, 65, closed=&#39;right&#39;): Int64Index([ 1,  5,  9, 10, 12, 13, 15, 16, 18, 21, 24, 25, 28, 29, 30, 34, 35,
+            36, 40, 41, 42, 43, 49, 50, 53, 54, 58, 61, 62, 65, 66, 67, 69, 70,
+            71, 72, 73, 75, 77, 79, 81, 83, 87, 88, 90, 91, 93, 96, 97, 99],
+           dtype=&#39;int64&#39;), Interval(65, 100, closed=&#39;right&#39;): Int64Index([14, 32, 38, 44, 47, 56, 64, 74, 94], dtype=&#39;int64&#39;)&#125;
+6:
+            Age  Sex
+Age                
+(19, 40]    41   41
+(40, 65]    50   50
+(65, 100]    9    9
+7:
+ Sex         F   M
+Age              
+(19, 40]   24  17
+(40, 65]   31  19
+(65, 100]   2   7</code></pre>
+<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;聚合函数</span></span><br><span class="line"><span class="string">mean    计算分组平均值</span></span><br><span class="line"><span class="string">count    分组中非NA值的数量</span></span><br><span class="line"><span class="string">sum    非NA值的和</span></span><br><span class="line"><span class="string">median   非NA值的算术中位数</span></span><br><span class="line"><span class="string">std    标准差</span></span><br><span class="line"><span class="string">var    方差</span></span><br><span class="line"><span class="string">min    非NA值的最小值</span></span><br><span class="line"><span class="string">max    非NA值的最大值</span></span><br><span class="line"><span class="string">prod    非NA值的积</span></span><br><span class="line"><span class="string">first    第一个非NA值</span></span><br><span class="line"><span class="string">last    最后一一个非NA值</span></span><br><span class="line"><span class="string">mad    平均绝对偏差</span></span><br><span class="line"><span class="string">mode   模</span></span><br><span class="line"><span class="string">abs    绝对值</span></span><br><span class="line"><span class="string">sem    平均值的标准误差</span></span><br><span class="line"><span class="string">skew    样品偏斜度 (三阶矩)</span></span><br><span class="line"><span class="string">kurt    样品峰度(四阶矩)</span></span><br><span class="line"><span class="string">quantile  样本分位数(百分位上的值)</span></span><br><span class="line"><span class="string">cumsum    累积总和</span></span><br><span class="line"><span class="string">cumprod   累积乘积</span></span><br><span class="line"><span class="string">cummax    累积最大值</span></span><br><span class="line"><span class="string">cummin    累积最小值</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df1=pd. DataFrame(&#123;<span class="string">&#x27;Data1&#x27;</span>:np.random.randint(<span class="number">0</span>,<span class="number">10</span>,<span class="number">5</span>),</span><br><span class="line">    <span class="string">&#x27;Data2&#x27;</span> : np.random.randint(<span class="number">10</span>,<span class="number">20</span>,<span class="number">5</span>),</span><br><span class="line">    <span class="string">&#x27;key1&#x27;</span> : list( <span class="string">&#x27;aabba&#x27;</span> ),</span><br><span class="line">    <span class="string">&#x27;key2&#x27;</span>: list( <span class="string">&#x27;xyyxy&#x27;</span>)&#125;)</span><br><span class="line">print(df1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#按key1分组，进行聚合计算</span></span><br><span class="line"><span class="comment">#注意:当分组后进行数值计算时，不是数值类的列(即麻烦列)会被清除</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1.groupby(<span class="string">&#x27;key1&#x27;</span>).sum())</span><br><span class="line"></span><br><span class="line"><span class="comment">#只算datal</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1[ <span class="string">&#x27;Data1&#x27;</span>].groupby(df1[<span class="string">&#x27;key1&#x27;</span>]).sum())</span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1.groupby( <span class="string">&#x27;key1&#x27;</span>)[ <span class="string">&#x27;Data1&#x27;</span>].sum())</span><br><span class="line">          </span><br><span class="line"><span class="comment">#使用agg()函数做聚合运算</span></span><br><span class="line">print(<span class="string">&#x27;4:\n&#x27;</span>, df1.groupby(<span class="string">&#x27;key1&#x27;</span>).agg( <span class="string">&#x27;sum&#x27;</span>))</span><br><span class="line">          </span><br><span class="line"><span class="comment">#可以同时做多个聚合运算</span></span><br><span class="line">print(<span class="string">&#x27;5:\n&#x27;</span>, df1.groupby(<span class="string">&#x27;key1&#x27;</span>).agg([<span class="string">&#x27;sum&#x27;</span>, <span class="string">&#x27;mean&#x27;</span>, <span class="string">&#x27;std&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Data1  Data2 key1 key2
+0      6     10    a    x
+1      7     18    a    y
+2      4     17    b    y
+3      4     13    b    x
+4      7     14    a    y
+1:
+       Data1  Data2
+key1              
+a        20     42
+b         8     30
+2:
+ key1
+a    20
+b     8
+Name: Data1, dtype: int32
+3:
+ key1
+a    20
+b     8
+Name: Data1, dtype: int32
+4:
+       Data1  Data2
+key1              
+a        20     42
+b         8     30
+5:
+      Data1                    Data2               
+       sum      mean      std   sum mean       std
+key1                                              
+a       20  6.666667  0.57735    42   14  4.000000
+b        8  4.000000  0.00000    30   15  2.828427</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">df1=pd. DataFrame(&#123;<span class="string">&#x27;Data1&#x27;</span>:np.random.randint(<span class="number">0</span>,<span class="number">10</span>,<span class="number">5</span>),</span><br><span class="line">    <span class="string">&#x27;Data2&#x27;</span> : np.random.randint(<span class="number">10</span>,<span class="number">20</span>,<span class="number">5</span>),</span><br><span class="line">    <span class="string">&#x27;key1&#x27;</span> : list( <span class="string">&#x27;aabba&#x27;</span> ),</span><br><span class="line">    <span class="string">&#x27;key2&#x27;</span>: list( <span class="string">&#x27;xyyxy&#x27;</span>)&#125;)</span><br><span class="line">print(df1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可自定义函数，传入agg方法中grouped.agg(func)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">peak_range</span>(<span class="params">df</span>):</span></span><br><span class="line">    <span class="comment"># 返回数值范围</span></span><br><span class="line">    <span class="keyword">return</span> df.max() - df.min()</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, df1.groupby( <span class="string">&#x27;key1&#x27;</span>).agg(peak_range))</span><br><span class="line">          </span><br><span class="line"><span class="comment">#同时应用多个聚合函数</span></span><br><span class="line">print(<span class="string">&#x27;2:\n&#x27;</span>, df1.groupby(<span class="string">&#x27;key1&#x27;</span>).agg([<span class="string">&#x27;mean&#x27;</span>, <span class="string">&#x27;std&#x27;</span>,<span class="string">&#x27;count&#x27;</span>,peak_range])) <span class="comment">#默认列名为函数名</span></span><br><span class="line">print(<span class="string">&#x27;3:\n&#x27;</span>, df1.groupby(<span class="string">&#x27;key1&#x27;</span>) .agg([<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;std&#x27;</span>,<span class="string">&#x27;count&#x27;</span>,(<span class="string">&#x27;range&#x27;</span>,peak_range)])) <span class="comment">#通过元组提供新的列名</span></span><br><span class="line"><span class="comment">#给每列作用不同的聚合函数</span></span><br><span class="line">dict_mapping = &#123;</span><br><span class="line">    <span class="string">&#x27;Data1&#x27;</span> :[<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;max&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;Data2&#x27;</span>:<span class="string">&#x27;sum&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">df1.groupby(<span class="string">&#x27;key1&#x27;</span>).agg(dict_mapping)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>   Data1  Data2 key1 key2
+0      4     14    a    x
+1      4     17    a    y
+2      6     11    b    y
+3      2     17    b    x
+4      0     11    a    y
+1:
+       Data1  Data2
+key1              
+a         4      6
+b         4      6
+2:
+          Data1                            Data2                           
+          mean       std count peak_range  mean       std count peak_range
+key1                                                                      
+a     2.666667  2.309401     3          4    14  3.000000     3          6
+b     4.000000  2.828427     2          4    14  4.242641     2          6
+3:
+          Data1                       Data2                      
+          mean       std count range  mean       std count range
+key1                                                            
+a     2.666667  2.309401     3     4    14  3.000000     3     6
+b     4.000000  2.828427     2     4    14  4.242641     2     6</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead tr th &#123;
+    text-align: left;
+&#125;
+
+.dataframe thead tr:last-of-type th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Data1</th>
+      <th>Data2</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>max</th>
+      <th>sum</th>
+    </tr>
+    <tr>
+      <th>key1</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>2.666667</td>
+      <td>4</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>4.000000</td>
+      <td>6</td>
+      <td>28</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="apply-函数"><a href="#apply-函数" class="headerlink" title="apply()函数"></a>apply()函数</h3><p>apply是pandas里面所有函数自由度最高的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df1=pd.DataFrame(&#123;<span class="string">&#x27;sex&#x27;</span> :list( <span class="string">&#x27;FFMFMMF&#x27;</span>), <span class="string">&#x27;smoker&#x27;</span> :list( <span class="string">&#x27;YNYYNYY&#x27;</span>),<span class="string">&#x27;age&#x27;</span> :[<span class="number">21</span>,<span class="number">30</span>,<span class="number">17</span>,<span class="number">37</span>,<span class="number">40</span>,<span class="number">18</span>,<span class="number">26</span>], <span class="string">&#x27;weight&#x27;</span> :[<span class="number">120</span>,<span class="number">100</span>, <span class="number">132</span>,<span class="number">140</span>,<span class="number">94</span>,<span class="number">89</span>, <span class="number">123</span>]&#125;)</span><br><span class="line">print(df1)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bin_age</span>(<span class="params">age</span>):</span></span><br><span class="line">    <span class="keyword">if</span> age &gt;=<span class="number">18</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="comment">#抽烟的年龄大于等18的</span></span><br><span class="line">print(df1[<span class="string">&#x27;age&#x27;</span>].apply(bin_age))</span><br><span class="line">df1[<span class="string">&#x27;age&#x27;</span>] = df1[<span class="string">&#x27;age&#x27;</span>].apply(bin_age)</span><br><span class="line">print(df1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>  sex smoker  age  weight
+0   F      Y   21     120
+1   F      N   30     100
+2   M      Y   17     132
+3   F      Y   37     140
+4   M      N   40      94
+5   M      Y   18      89
+6   F      Y   26     123
+0    1
+1    1
+2    0
+3    1
+4    1
+5    1
+6    1
+Name: age, dtype: int64
+  sex smoker  age  weight
+0   F      Y    1     120
+1   F      N    1     100
+2   M      Y    0     132
+3   F      Y    1     140
+4   M      N    1      94
+5   M      Y    1      89
+6   F      Y    1     123</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
       
 
@@ -263,7 +857,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/29/andas-note2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +871,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Numpy_note1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/11/27/andas-note1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas_note1</div>
       <i class="icon-circle-right"></i>
     </a>
   
