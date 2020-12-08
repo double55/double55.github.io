@@ -38,11 +38,16 @@
 
 <meta name="generator" content="Hexo 5.2.0"></head>
 
-<body>
-  <div id="container" q-class="show:isCtnShow">
-    <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
-      
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <!-- 雪花特效 -->
+    <script type="text/javascript" src="\js\snow2.js"></script>
+
+    <body>
+        <div id="container" q-class="show:isCtnShow">
+            <canvas id="anm-canvas" class="anm-canvas"></canvas>
+            <div class="left-col" q-class="show:isShow">
+                
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -59,7 +64,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags">随笔</a></li>
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,9 +95,9 @@
 	</header>		
 </div>
 
-    </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
-      
+            </div>
+            <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+                
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
 	<div class="btnctn js-mobile-btnctn">
@@ -111,6 +118,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -122,12 +131,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -136,33 +147,35 @@
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
-      <div id="wrapper" class="body-wrap">
-        <div class="menu-l">
-          <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
-          </div>
-          <div id="js-content" class="content-ll">
-            <article id="post-Numpy-note2" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+                    <div id="wrapper" class="body-wrap">
+                        <div class="menu-l">
+                            <div class="canvas-wrap">
+                                <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+                            </div>
+                            <div id="js-content" class="content-ll">
+                                <article id="post-Numpy-note2" class="article article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="article-title" itemprop="name">
       Numpy_note2
     </h1>
   
 
-        
-        <a href="/2020/11/26/Numpy-note2/" class="archive-article-date">
+                    
+                        <a href="/2020/11/26/Numpy-note2/" class="archive-article-date">
   	<time datetime="2020-11-26T11:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="numpy相关内容"><a href="#numpy相关内容" class="headerlink" title="numpy相关内容"></a>numpy相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span><br><span class="line">    a.append(random.random())</span><br><span class="line"></span><br><span class="line">t1 = time.time()</span><br><span class="line">sum1 = sum(a)</span><br><span class="line">t2 = time.time()</span><br><span class="line"></span><br><span class="line">b = np.array(a)</span><br><span class="line">t3 = time.time()</span><br><span class="line">sum2 = np.sum(b)</span><br><span class="line">t4 = time.time()</span><br><span class="line"></span><br><span class="line">print(t2 - t1, t4 - t3)</span><br></pre></td></tr></table></figure>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                                    <h1 id="numpy相关内容"><a href="#numpy相关内容" class="headerlink" title="numpy相关内容"></a>numpy相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span><br><span class="line">    a.append(random.random())</span><br><span class="line"></span><br><span class="line">t1 = time.time()</span><br><span class="line">sum1 = sum(a)</span><br><span class="line">t2 = time.time()</span><br><span class="line"></span><br><span class="line">b = np.array(a)</span><br><span class="line">t3 = time.time()</span><br><span class="line">sum2 = np.sum(b)</span><br><span class="line">t4 = time.time()</span><br><span class="line"></span><br><span class="line">print(t2 - t1, t4 - t3)</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
@@ -378,40 +391,50 @@ inf &lt;class &#39;float&#39;&gt;
  [12. 13. 14. 15. 16. 17.]
  [18. 19. 20. 21. 22. 23.]]</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-      
+                                                        
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
+                                                            
+                                                                <div class="page-reward">
+                                                                    <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                                                        <div class="tooltip tooltip-east">
+                                                                            <span class="tooltip-item">
               赏
             </span>
-            <span class="tooltip-content">
+                                                                            <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/reward/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                                                                        </div>
+                                                                        
+                                                                            
+                                                                                <div class="reward-box-item">
+                                                                                    <img class="reward-img" src="/reward/weixin.png">
+                                                                                    <span class="reward-type">微信</span>
+                                                                                </div>
+                                                                                
+                                                                </div>
+                                                                </span>
+                                                                </span>
+                                                                </span>
+                </div>
+                </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
+                            
 
-      
-        
+                                    
+                                        
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -461,13 +484,13 @@ inf &lt;class &#39;float&#39;&gt;
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                            
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-  
+    
 <nav id="article-nav">
   
     <a href="/2020/11/27/andas-note1/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -487,8 +510,8 @@ inf &lt;class &#39;float&#39;&gt;
   
 </nav>
 
-
-<aside class="wrap-side-operation">
+        
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -501,26 +524,38 @@ inf &lt;class &#39;float&#39;&gt;
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#numpy%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">numpy相关内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text">创建一维数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%E7%9A%84%E5%A4%9A%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">创建数组的多种形式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E4%BC%A0%E5%85%A5%E5%88%97%E8%A1%A8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">直接传入列表的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E5%85%A5range%E7%94%9F%E6%88%90%E5%BA%8F%E5%88%97"><span class="toc-number">3.2.</span> <span class="toc-text">传入range生成序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8numpy%E8%87%AA%E5%B8%A6%E7%9A%84np-arange-%E7%94%9F%E6%88%90%E6%95%B0%E7%BB%84"><span class="toc-number">3.3.</span> <span class="toc-text">使用numpy自带的np.arange()生成数组</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">4.</span> <span class="toc-text">创建二维数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">5.</span> <span class="toc-text">常用属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%BD%A2%E7%8A%B6"><span class="toc-number">6.</span> <span class="toc-text">调整数组的形状</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E6%95%B0%E7%BB%84%E5%BD%A2%E7%8A%B6"><span class="toc-number">7.</span> <span class="toc-text">改变数组形状</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E8%BD%B4"><span class="toc-number">8.</span> <span class="toc-text">数组中的轴</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%86%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BAlist"><span class="toc-number">9.</span> <span class="toc-text">将数组转换为list</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Numpy%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">10.</span> <span class="toc-text">Numpy的数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">11.</span> <span class="toc-text">数组的计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">11.1.</span> <span class="toc-text">数组和数的计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">11.2.</span> <span class="toc-text">数组与数组之间的操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87"><span class="toc-number">12.</span> <span class="toc-text">数组的索引和切片</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-number">12.1.</span> <span class="toc-text">一维数组的操作方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-number">12.2.</span> <span class="toc-text">多维数组的操作方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97"><span class="toc-number">13.</span> <span class="toc-text">三目运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84nan%E5%92%8Cinf"><span class="toc-number">14.</span> <span class="toc-text">数组中的nan和inf</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A%E5%A4%84%E7%90%86%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84-nan"><span class="toc-number">15.</span> <span class="toc-text">例：处理数组中的 nan</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+                
+                    
 
-  
-  
-  
+                                
 
-  
+                                            
 
-  
+                                                        
 
-  
-
-
-          </div>
-        </div>
-      </div>
-      <footer id="footer">
+                                                                
+                                                                            
+                            </div>
+                        </div>
+                    </div>
+                    <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -532,8 +567,8 @@ inf &lt;class &#39;float&#39;&gt;
     </div>
   </div>
 </footer>
-    </div>
-    <script>
+            </div>
+            <script>
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
@@ -576,7 +611,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
-    
+                
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
     
@@ -706,7 +741,7 @@ MathJax.Hub.Queue(function() {
   </div>
   
 </div>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                    <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe. 
@@ -772,6 +807,10 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-</body>
-</html>
+        </div>
+        <!--单击显示文字-->
+        <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+    </body>
+
+    </html>

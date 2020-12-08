@@ -15,8 +15,8 @@
 <meta property="og:site_name" content="Double55的blog">
 <meta property="og:description" content="pandas相关内容多层索引创建多层索引 Series创建多层索引 123456789import pandas as pdimport randomimport numpy as nps &#x3D; pd.Series(np.random.randint(0, 150, size&#x3D;6), index&#x3D;list(&amp;#x27;abcdef&amp;#x27;))print(&amp;#x27;1:\n&amp;#x27;, s)s">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-29T12:44:04.000Z">
-<meta property="article:modified_time" content="2020-11-29T13:56:07.741Z">
+<meta property="article:published_time" content="2020-11-29T12:44:00.000Z">
+<meta property="article:modified_time" content="2020-12-08T08:07:12.504Z">
 <meta property="article:author" content="Double55">
 <meta name="twitter:card" content="summary">
   
@@ -38,11 +38,16 @@
 
 <meta name="generator" content="Hexo 5.2.0"></head>
 
-<body>
-  <div id="container" q-class="show:isCtnShow">
-    <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
-      
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <!-- 雪花特效 -->
+    <script type="text/javascript" src="\js\snow2.js"></script>
+
+    <body>
+        <div id="container" q-class="show:isCtnShow">
+            <canvas id="anm-canvas" class="anm-canvas"></canvas>
+            <div class="left-col" q-class="show:isShow">
+                
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -59,7 +64,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags">随笔</a></li>
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,9 +95,9 @@
 	</header>		
 </div>
 
-    </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
-      
+            </div>
+            <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+                
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
 	<div class="btnctn js-mobile-btnctn">
@@ -111,6 +118,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -122,12 +131,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -136,33 +147,35 @@
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
-      <div id="wrapper" class="body-wrap">
-        <div class="menu-l">
-          <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
-          </div>
-          <div id="js-content" class="content-ll">
-            <article id="post-andas-note2" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+                    <div id="wrapper" class="body-wrap">
+                        <div class="menu-l">
+                            <div class="canvas-wrap">
+                                <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+                            </div>
+                            <div id="js-content" class="content-ll">
+                                <article id="post-andas-note2" class="article article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="article-title" itemprop="name">
       Pandas_note2
     </h1>
   
 
-        
-        <a href="/2020/11/29/andas-note2/" class="archive-article-date">
-  	<time datetime="2020-11-29T12:44:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-29</time>
+                    
+                        <a href="/2020/11/29/andas-note2/" class="archive-article-date">
+  	<time datetime="2020-11-29T12:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-29</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><h2 id="多层索引"><a href="#多层索引" class="headerlink" title="多层索引"></a>多层索引</h2><p>创建多层索引</p>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                                    <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><h2 id="多层索引"><a href="#多层索引" class="headerlink" title="多层索引"></a>多层索引</h2><p>创建多层索引</p>
 <p>Series创建多层索引</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">s = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">150</span>, size=<span class="number">6</span>), index=list(<span class="string">&#x27;abcdef&#x27;</span>))</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s)</span><br><span class="line"></span><br><span class="line">s1 = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">150</span>, size=<span class="number">6</span>),index=[[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;c&#x27;</span>],[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s1)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -868,41 +881,50 @@ N      4   M      N   40      94
 Y      2   M      Y   17     132
        3   F      Y   37     140</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+                                                        
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
+                                                            
+                                                                <div class="page-reward">
+                                                                    <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                                                        <div class="tooltip tooltip-east">
+                                                                            <span class="tooltip-item">
               赏
             </span>
-            <span class="tooltip-content">
+                                                                            <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/reward/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                                                                        </div>
+                                                                        
+                                                                            
+                                                                                <div class="reward-box-item">
+                                                                                    <img class="reward-img" src="/reward/weixin.png">
+                                                                                    <span class="reward-type">微信</span>
+                                                                                </div>
+                                                                                
+                                                                </div>
+                                                                </span>
+                                                                </span>
+                                                                </span>
+                </div>
+                </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
+                            
 
-      
-        
+                                    
+                                        
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -952,13 +974,13 @@ Y      2   M      Y   17     132
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                            
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-  
+    
 <nav id="article-nav">
   
   
@@ -969,8 +991,8 @@ Y      2   M      Y   17     132
   
 </nav>
 
-
-<aside class="wrap-side-operation">
+        
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -983,26 +1005,38 @@ Y      2   M      Y   17     132
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pandas%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">pandas相关内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="toc-number">1.1.</span> <span class="toc-text">多层索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.</span> <span class="toc-text">DataFrame创建多层索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">特定结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#product%E6%9E%84%E9%80%A0"><span class="toc-number">1.4.</span> <span class="toc-text">product构造</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%B4%A2%E5%BC%95%E2%80%93Series"><span class="toc-number">1.5.</span> <span class="toc-text">多层索引对象的索引–Series</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%B4%A2%E5%BC%95%E2%80%93DataFrame"><span class="toc-number">1.6.</span> <span class="toc-text">多层索引对象的索引–DataFrame</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="toc-number">2.</span> <span class="toc-text">时间序列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%9C%A8DataFrame%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">时间序列在DataFrame中的作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%97%B6%E9%97%B4%E4%BD%9C%E4%B8%BA%E7%B4%A2%E5%BC%95"><span class="toc-number">2.1.1.</span> <span class="toc-text">可以将时间作为索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87between-time-%E8%BF%94%E5%9B%9E%E4%BD%8D%E4%BA%8E%E6%8C%87%E5%AE%9A%E6%97%B6%E9%97%B4%E6%AE%B5%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">2.1.2.</span> <span class="toc-text">通过between_time()返回位于指定时间段的数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E4%BD%8D%E6%97%A5%E6%9C%9F"><span class="toc-number">2.1.3.</span> <span class="toc-text">移位日期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E8%81%9A%E5%90%88"><span class="toc-number">2.2.</span> <span class="toc-text">分组聚合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84"><span class="toc-number">2.3.</span> <span class="toc-text">分组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88"><span class="toc-number">2.3.1.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apply-%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.2.</span> <span class="toc-text">apply()函数</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+                
+                    
 
-  
-  
-  
+                                
 
-  
+                                            
 
-  
+                                                        
 
-  
-
-
-          </div>
-        </div>
-      </div>
-      <footer id="footer">
+                                                                
+                                                                            
+                            </div>
+                        </div>
+                    </div>
+                    <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -1014,8 +1048,8 @@ Y      2   M      Y   17     132
     </div>
   </div>
 </footer>
-    </div>
-    <script>
+            </div>
+            <script>
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
@@ -1058,7 +1092,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
-    
+                
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
     
@@ -1188,7 +1222,7 @@ MathJax.Hub.Queue(function() {
   </div>
   
 </div>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                    <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe. 
@@ -1254,6 +1288,10 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-</body>
-</html>
+        </div>
+        <!--单击显示文字-->
+        <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+    </body>
+
+    </html>

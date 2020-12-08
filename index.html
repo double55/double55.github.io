@@ -34,11 +34,16 @@
 
 <meta name="generator" content="Hexo 5.2.0"></head>
 
-<body>
-  <div id="container" q-class="show:isCtnShow">
-    <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
-      
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <!-- 雪花特效 -->
+    <script type="text/javascript" src="\js\snow2.js"></script>
+
+    <body>
+        <div id="container" q-class="show:isCtnShow">
+            <canvas id="anm-canvas" class="anm-canvas"></canvas>
+            <div class="left-col" q-class="show:isShow">
+                
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -55,7 +60,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags">随笔</a></li>
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -84,9 +91,9 @@
 	</header>		
 </div>
 
-    </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
-      
+            </div>
+            <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+                
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
 	<div class="btnctn js-mobile-btnctn">
@@ -107,6 +114,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -118,12 +127,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -132,62 +143,66 @@
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
-      <div id="wrapper" class="body-wrap">
-        <div class="menu-l">
-          <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
-          </div>
-          <div id="js-content" class="content-ll">
-            
+                    <div id="wrapper" class="body-wrap">
+                        <div class="menu-l">
+                            <div class="canvas-wrap">
+                                <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+                            </div>
+                            <div id="js-content" class="content-ll">
+                                
   
     <article id="post-andas-note2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/11/29/andas-note2/">Pandas_note2</a>
     </h1>
   
 
-        
-        <a href="/2020/11/29/andas-note2/" class="archive-article-date">
-  	<time datetime="2020-11-29T12:44:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-29</time>
+                    
+                        <a href="/2020/11/29/andas-note2/" class="archive-article-date">
+  	<time datetime="2020-11-29T12:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-29</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><h2 id="多层索引"><a href="#多层索引" class="headerlink" title="多层索引"></a>多层索引</h2><p>创建多层索引</p>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                    <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><h2 id="多层索引"><a href="#多层索引" class="headerlink" title="多层索引"></a>多层索引</h2><p>创建多层索引</p>
 <p>Series创建多层索引</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">s = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">150</span>, size=<span class="number">6</span>), index=list(<span class="string">&#x27;abcdef&#x27;</span>))</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s)</span><br><span class="line"></span><br><span class="line">s1 = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">150</span>, size=<span class="number">6</span>),index=[[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;c&#x27;</span>],[<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>,<span class="string">&#x27;期中&#x27;</span>,<span class="string">&#x27;期末&#x27;</span>]])</span><br><span class="line">print(<span class="string">&#x27;1:\n&#x27;</span>, s1)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/11/29/andas-note2/#more">more >></a>
-        
-      
+                                        
+                                            <a class="article-more-a" href="/2020/11/29/andas-note2/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/29/andas-note2/">展开全文 >></a>
-        </p>
-      
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/11/29/andas-note2/">
+                                        展开全文 >></a>
+                                </p>
+                                
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -204,55 +219,69 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-andas-note1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/11/27/andas-note1/">Pandas_note1</a>
     </h1>
   
 
-        
-        <a href="/2020/11/27/andas-note1/" class="archive-article-date">
+                    
+                        <a href="/2020/11/27/andas-note1/" class="archive-article-date">
   	<time datetime="2020-11-27T14:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-27</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(<span class="string">&quot;1:\n&quot;</span>, sel)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义索引</span></span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>])</span><br><span class="line">sel1 = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">print(<span class="string">&quot;2:\n&quot;</span>, sel,sel1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取内容</span></span><br><span class="line">print(<span class="string">&quot;3:\n&quot;</span>, sel.values)  <span class="comment">#  [1 2 3 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取索引</span></span><br><span class="line">print(<span class="string">&quot;4:\n&quot;</span>, sel.index)  <span class="comment">#  Index([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;], dtype=&#x27;object&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取索引和值对</span></span><br><span class="line">print(<span class="string">&quot;5:\n&quot;</span>, list(sel.iteritems()))  <span class="comment">#  [(&#x27;a&#x27;, 1), (&#x27;b&#x27;, 2), (&#x27;c&#x27;, 3), (&#x27;d&#x27;, 4)]</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/11/27/andas-note1/#more">more >></a>
-        
-      
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                
+                                    <h1 id="pandas相关内容"><a href="#pandas相关内容" class="headerlink" title="pandas相关内容"></a>pandas相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series,DataFrame</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(<span class="string">&quot;1:\n&quot;</span>, sel)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义索引</span></span><br><span class="line">sel = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>])</span><br><span class="line">sel1 = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], index=list(<span class="string">&#x27;abcd&#x27;</span>))</span><br><span class="line">print(<span class="string">&quot;2:\n&quot;</span>, sel,sel1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取内容</span></span><br><span class="line">print(<span class="string">&quot;3:\n&quot;</span>, sel.values)  <span class="comment">#  [1 2 3 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取索引</span></span><br><span class="line">print(<span class="string">&quot;4:\n&quot;</span>, sel.index)  <span class="comment">#  Index([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;], dtype=&#x27;object&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取索引和值对</span></span><br><span class="line">print(<span class="string">&quot;5:\n&quot;</span>, list(sel.iteritems()))  <span class="comment">#  [(&#x27;a&#x27;, 1), (&#x27;b&#x27;, 2), (&#x27;c&#x27;, 3), (&#x27;d&#x27;, 4)]</span></span><br></pre></td></tr></table></figure>
+                                        
+                                            <a class="article-more-a" href="/2020/11/27/andas-note1/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/27/andas-note1/">展开全文 >></a>
-        </p>
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/11/27/andas-note1/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -269,55 +298,58 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-Numpy-note2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/11/26/Numpy-note2/">Numpy_note2</a>
     </h1>
   
 
-        
-        <a href="/2020/11/26/Numpy-note2/" class="archive-article-date">
+                    
+                        <a href="/2020/11/26/Numpy-note2/" class="archive-article-date">
   	<time datetime="2020-11-26T11:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="numpy相关内容"><a href="#numpy相关内容" class="headerlink" title="numpy相关内容"></a>numpy相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span><br><span class="line">    a.append(random.random())</span><br><span class="line"></span><br><span class="line">t1 = time.time()</span><br><span class="line">sum1 = sum(a)</span><br><span class="line">t2 = time.time()</span><br><span class="line"></span><br><span class="line">b = np.array(a)</span><br><span class="line">t3 = time.time()</span><br><span class="line">sum2 = np.sum(b)</span><br><span class="line">t4 = time.time()</span><br><span class="line"></span><br><span class="line">print(t2 - t1, t4 - t3)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/11/26/Numpy-note2/#more">more >></a>
-        
-      
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                
+                                    <h1 id="numpy相关内容"><a href="#numpy相关内容" class="headerlink" title="numpy相关内容"></a>numpy相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span><br><span class="line">    a.append(random.random())</span><br><span class="line"></span><br><span class="line">t1 = time.time()</span><br><span class="line">sum1 = sum(a)</span><br><span class="line">t2 = time.time()</span><br><span class="line"></span><br><span class="line">b = np.array(a)</span><br><span class="line">t3 = time.time()</span><br><span class="line">sum2 = np.sum(b)</span><br><span class="line">t4 = time.time()</span><br><span class="line"></span><br><span class="line">print(t2 - t1, t4 - t3)</span><br></pre></td></tr></table></figure>
+                                        
+                                            <a class="article-more-a" href="/2020/11/26/Numpy-note2/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/26/Numpy-note2/">展开全文 >></a>
-        </p>
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/11/26/Numpy-note2/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -334,56 +366,59 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-hexo文章添加图片，音乐，视频" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/">hexo文章添加图片，音乐，视频</a>
     </h1>
   
 
-        
-        <a href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/" class="archive-article-date">
+                    
+                        <a href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/" class="archive-article-date">
   	<time datetime="2020-11-25T12:20:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="插入外部链接图片"><a href="#插入外部链接图片" class="headerlink" title="插入外部链接图片"></a>插入外部链接图片</h1><p><code>![&quot;图片描述&quot;](&quot;图片地址&quot;)</code></p>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                    <h1 id="插入外部链接图片"><a href="#插入外部链接图片" class="headerlink" title="插入外部链接图片"></a>插入外部链接图片</h1><p><code>![&quot;图片描述&quot;](&quot;图片地址&quot;)</code></p>
 <h1 id="添加本地图片"><a href="#添加本地图片" class="headerlink" title="添加本地图片"></a>添加本地图片</h1><p>在\hexo\source目录下新建文件夹，命名为img或者其他自己喜欢的名字，然后编辑你的md博文，插入下面的代码样式：</p>
-        
-          <a class="article-more-a" href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/#more">more >></a>
-        
-      
+                                        
+                                            <a class="article-more-a" href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/">展开全文 >></a>
-        </p>
-      
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/11/25/hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E4%B9%90%EF%BC%8C%E8%A7%86%E9%A2%91/">
+                                        展开全文 >></a>
+                                </p>
+                                
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -400,55 +435,58 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-Matplotlib-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/11/25/Matplotlib-note/">Matplotlib_note</a>
     </h1>
   
 
-        
-        <a href="/2020/11/25/Matplotlib-note/" class="archive-article-date">
+                    
+                        <a href="/2020/11/25/Matplotlib-note/" class="archive-article-date">
   	<time datetime="2020-11-25T11:29:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="matplotlib相关内容"><a href="#matplotlib相关内容" class="headerlink" title="matplotlib相关内容"></a>matplotlib相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 折线图</span></span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.x y x轴的位置</span></span><br><span class="line">x = range(<span class="number">1</span>,<span class="number">8</span>) </span><br><span class="line">y = [<span class="number">17</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">11</span>, <span class="number">13</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 传入x和y, 通过plot画折线图</span></span><br><span class="line">plt.plot(x,y,color= <span class="string">&#x27;red&#x27;</span>,alpha = <span class="number">0.5</span>,linestyle=<span class="string">&#x27;--&#x27;</span>,linewidth=<span class="number">3</span>,marker=<span class="string">&#x27;o&#x27;</span>,</span><br><span class="line">         markersize=<span class="string">&#x27;20&#x27;</span>,markeredgecolor=<span class="string">&#x27;green&#x27;</span>,markeredgewidth=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># alpha 透明度  0-1</span></span><br><span class="line"><span class="comment"># 3. 显示</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/11/25/Matplotlib-note/#more">more >></a>
-        
-      
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                
+                                    <h1 id="matplotlib相关内容"><a href="#matplotlib相关内容" class="headerlink" title="matplotlib相关内容"></a>matplotlib相关内容</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 折线图</span></span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.x y x轴的位置</span></span><br><span class="line">x = range(<span class="number">1</span>,<span class="number">8</span>) </span><br><span class="line">y = [<span class="number">17</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">11</span>, <span class="number">13</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 传入x和y, 通过plot画折线图</span></span><br><span class="line">plt.plot(x,y,color= <span class="string">&#x27;red&#x27;</span>,alpha = <span class="number">0.5</span>,linestyle=<span class="string">&#x27;--&#x27;</span>,linewidth=<span class="number">3</span>,marker=<span class="string">&#x27;o&#x27;</span>,</span><br><span class="line">         markersize=<span class="string">&#x27;20&#x27;</span>,markeredgecolor=<span class="string">&#x27;green&#x27;</span>,markeredgewidth=<span class="number">5</span>)</span><br><span class="line"><span class="comment"># alpha 透明度  0-1</span></span><br><span class="line"><span class="comment"># 3. 显示</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                                        
+                                            <a class="article-more-a" href="/2020/11/25/Matplotlib-note/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/25/Matplotlib-note/">展开全文 >></a>
-        </p>
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/11/25/Matplotlib-note/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -465,54 +503,56 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-查找网页api" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/">查找网页api</a>
     </h1>
   
 
-        
-        <a href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/" class="archive-article-date">
+                    
+                        <a href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/" class="archive-article-date">
   	<time datetime="2020-10-28T16:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="查找bilibili网页api"><a href="#查找bilibili网页api" class="headerlink" title="查找bilibili网页api"></a>查找bilibili网页api</h1><p>由于bilibili弹幕库不可能存储所有弹幕，要进行所有的弹幕分析，首先要找一找可用的api。</p>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                                    <h1 id="查找bilibili网页api"><a href="#查找bilibili网页api" class="headerlink" title="查找bilibili网页api"></a>查找bilibili网页api</h1><p>由于bilibili弹幕库不可能存储所有弹幕，要进行所有的弹幕分析，首先要找一找可用的api。</p>
 <p>打开你所要爬取弹幕的视频url，Ctrl+U打开网页源代码，然后Ctrl+F查找cid。<a target="_blank" rel="noopener" href="https://api.bilibili.com/x/v1/dm/list.so?oid=%EF%BC%88%E4%BD%A0%E6%89%80%E6%9F%A5%E6%89%BE%E7%9A%84cid%EF%BC%89">https://api.bilibili.com/x/v1/dm/list.so?oid=（你所查找的cid）</a></p>
 
-      
+                                                        
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/">展开全文 >></a>
-        </p>
-      
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/">
+                                        展开全文 >></a>
+                                </p>
+                                
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -529,59 +569,62 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-umpy_笔记1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/">Numpy_note1</a>
     </h1>
   
 
-        
-        <a href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/" class="archive-article-date">
+                    
+                        <a href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/" class="archive-article-date">
   	<time datetime="2020-10-16T09:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-16</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-变换数组形态"><a href="#1-变换数组形态" class="headerlink" title="1.变换数组形态"></a>1.变换数组形态</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">srr = np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">print(srr)</span><br></pre></td></tr></table></figure>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                    <h1 id="1-变换数组形态"><a href="#1-变换数组形态" class="headerlink" title="1.变换数组形态"></a>1.变换数组形态</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">srr = np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">print(srr)</span><br></pre></td></tr></table></figure>
 
 <pre><code>[[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]</code></pre>
-        
-          <a class="article-more-a" href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/#more">more >></a>
-        
-      
+                                        
+                                            <a class="article-more-a" href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/">展开全文 >></a>
-        </p>
-      
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/10/16/umpy_%E7%AC%94%E8%AE%B01/">
+                                        展开全文 >></a>
+                                </p>
+                                
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -598,60 +641,63 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-个人简历-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/">个人简历</a>
     </h1>
   
 
-        
-        <a href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/" class="archive-article-date">
+                    
+                        <a href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/" class="archive-article-date">
   	<time datetime="2020-10-11T02:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基本资料"><a href="#基本资料" class="headerlink" title="基本资料"></a>基本资料</h1><p>姓   名：李刘俊 </p>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                    <h1 id="基本资料"><a href="#基本资料" class="headerlink" title="基本资料"></a>基本资料</h1><p>姓   名：李刘俊 </p>
 <p>出生日期：1998年01月15日</p>
 <p>性   别：男</p>
 <p>毕业学校：信阳学院</p>
 <p>专   业：计算机科学与技术</p>
 <p>联系电话：17633811790</p>
-        
-          <a class="article-more-a" href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/#more">more >></a>
-        
-      
+                                        
+                                            <a class="article-more-a" href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/">展开全文 >></a>
-        </p>
-      
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/10/11/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86-1/">
+                                        展开全文 >></a>
+                                </p>
+                                
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -668,55 +714,58 @@
 </aside>
 
 
-
-
+                
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/10/10/hello-world/">Hello World</a>
     </h1>
   
 
-        
-        <a href="/2020/10/10/hello-world/" class="archive-article-date">
+                    
+                        <a href="/2020/10/10/hello-world/" class="archive-article-date">
   	<time datetime="2020-10-10T15:44:14.341Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2020/10/10/hello-world/#more">more >></a>
-        
-      
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                                
+                                    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+                                        
+                                            <a class="article-more-a" href="/2020/10/10/hello-world/#more">
+                                                more >></a>
+                                            
+                                                
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/10/hello-world/">展开全文 >></a>
-        </p>
-      
+                                                            
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                            
+                                <p class="article-more-link">
+                                    <a class="article-more-a" href="/2020/10/10/hello-world/">
+                                        展开全文 >></a>
+                                </p>
+                                
+
+                                    
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-<aside class="wrap-side-operation">
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -733,16 +782,15 @@
 </aside>
 
 
-
-
+                
   
   
 
 
-          </div>
-        </div>
-      </div>
-      <footer id="footer">
+                            </div>
+                        </div>
+                    </div>
+                    <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -754,8 +802,8 @@
     </div>
   </div>
 </footer>
-    </div>
-    <script>
+            </div>
+            <script>
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: true,
@@ -798,7 +846,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
-    
+                
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
     
@@ -928,7 +976,7 @@ MathJax.Hub.Queue(function() {
   </div>
   
 </div>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                    <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe. 
@@ -994,6 +1042,10 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-</body>
-</html>
+        </div>
+        <!--单击显示文字-->
+        <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+    </body>
+
+    </html>

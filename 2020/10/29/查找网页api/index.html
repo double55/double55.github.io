@@ -38,11 +38,16 @@
 
 <meta name="generator" content="Hexo 5.2.0"></head>
 
-<body>
-  <div id="container" q-class="show:isCtnShow">
-    <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
-      
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <!-- 雪花特效 -->
+    <script type="text/javascript" src="\js\snow2.js"></script>
+
+    <body>
+        <div id="container" q-class="show:isCtnShow">
+            <canvas id="anm-canvas" class="anm-canvas"></canvas>
+            <div class="left-col" q-class="show:isShow">
+                
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -59,7 +64,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags">随笔</a></li>
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,9 +95,9 @@
 	</header>		
 </div>
 
-    </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
-      
+            </div>
+            <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+                
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
 	<div class="btnctn js-mobile-btnctn">
@@ -111,6 +118,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -122,12 +131,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -136,69 +147,81 @@
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
-      <div id="wrapper" class="body-wrap">
-        <div class="menu-l">
-          <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
-          </div>
-          <div id="js-content" class="content-ll">
-            <article id="post-查找网页api" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+                    <div id="wrapper" class="body-wrap">
+                        <div class="menu-l">
+                            <div class="canvas-wrap">
+                                <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+                            </div>
+                            <div id="js-content" class="content-ll">
+                                <article id="post-查找网页api" class="article article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="article-title" itemprop="name">
       查找网页api
     </h1>
   
 
-        
-        <a href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/" class="archive-article-date">
+                    
+                        <a href="/2020/10/29/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5api/" class="archive-article-date">
   	<time datetime="2020-10-28T16:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="查找bilibili网页api"><a href="#查找bilibili网页api" class="headerlink" title="查找bilibili网页api"></a>查找bilibili网页api</h1><p>由于bilibili弹幕库不可能存储所有弹幕，要进行所有的弹幕分析，首先要找一找可用的api。</p>
+                            
+            </header>
+            
+                <div class="article-entry" itemprop="articleBody">
+                    
+
+                                
+                                                    <h1 id="查找bilibili网页api"><a href="#查找bilibili网页api" class="headerlink" title="查找bilibili网页api"></a>查找bilibili网页api</h1><p>由于bilibili弹幕库不可能存储所有弹幕，要进行所有的弹幕分析，首先要找一找可用的api。</p>
 <p>打开你所要爬取弹幕的视频url，Ctrl+U打开网页源代码，然后Ctrl+F查找cid。<a target="_blank" rel="noopener" href="https://api.bilibili.com/x/v1/dm/list.so?oid=%EF%BC%88%E4%BD%A0%E6%89%80%E6%9F%A5%E6%89%BE%E7%9A%84cid%EF%BC%89">https://api.bilibili.com/x/v1/dm/list.so?oid=（你所查找的cid）</a></p>
 
-      
+                                                        
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
+                                                            
+                                                                <div class="page-reward">
+                                                                    <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                                                        <div class="tooltip tooltip-east">
+                                                                            <span class="tooltip-item">
               赏
             </span>
-            <span class="tooltip-content">
+                                                                            <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/reward/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                                                                        </div>
+                                                                        
+                                                                            
+                                                                                <div class="reward-box-item">
+                                                                                    <img class="reward-img" src="/reward/weixin.png">
+                                                                                    <span class="reward-type">微信</span>
+                                                                                </div>
+                                                                                
+                                                                </div>
+                                                                </span>
+                                                                </span>
+                                                                </span>
+                </div>
+                </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+        </div>
+        <div class="article-info article-info-index">
+            
+                    
+                        
 
-      
+                            
 
-      
-        
+                                    
+                                        
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -248,13 +271,13 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
+                                            
+                                                <div class="clearfix"></div>
+        </div>
+        </div>
 </article>
 
-  
+    
 <nav id="article-nav">
   
     <a href="/2020/11/25/Matplotlib-note/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -274,8 +297,8 @@
   
 </nav>
 
-
-<aside class="wrap-side-operation">
+        
+            <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -288,26 +311,38 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E6%89%BEbilibili%E7%BD%91%E9%A1%B5api"><span class="toc-number">1.</span> <span class="toc-text">查找bilibili网页api</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+                
+                    
 
-  
-  
-  
+                                
 
-  
+                                            
 
-  
+                                                        
 
-  
-
-
-          </div>
-        </div>
-      </div>
-      <footer id="footer">
+                                                                
+                                                                            
+                            </div>
+                        </div>
+                    </div>
+                    <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -319,8 +354,8 @@
     </div>
   </div>
 </footer>
-    </div>
-    <script>
+            </div>
+            <script>
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
@@ -363,7 +398,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
-    
+                
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
     
@@ -493,7 +528,7 @@ MathJax.Hub.Queue(function() {
   </div>
   
 </div>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                    <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe. 
@@ -559,6 +594,10 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-</body>
-</html>
+        </div>
+        <!--单击显示文字-->
+        <script type="text/javascript" src="/js/click_show_text.js"></script>
+
+    </body>
+
+    </html>
